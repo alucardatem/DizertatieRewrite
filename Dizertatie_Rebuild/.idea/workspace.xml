@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1155c2e-e0bf-4698-a019-932b2ac30151" name="Default" comment="added function for inserting AP_NAME">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+    <list default="true" id="d1155c2e-e0bf-4698-a019-932b2ac30151" name="Default" comment="Added AP_Details">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WifiCaps/includes/functions.php" afterPath="$PROJECT_DIR$/WifiCaps/includes/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Dizertatie_Rebuild.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,20 +30,29 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46701846">
-              <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.046703298">
+              <caret line="176" column="22" selection-start-line="176" selection-start-column="22" selection-end-line="176" selection-end-column="22" />
               <folding>
                 <element signature="e#7#35#0#PHP" expanded="true" />
                 <element signature="e#63#150#0#PHP" expanded="false" />
-                <marker date="1440963445605" expanded="true" signature="258:291" placeholder="Insert into ..." />
-                <marker date="1440963445605" expanded="true" signature="258:308" placeholder="Insert into ..." />
-                <marker date="1440963445605" expanded="true" signature="309:326" placeholder="update AP_Ma..." />
-                <marker date="1440963445605" expanded="true" signature="1078:1112" placeholder="SELECT * fro..aps..." />
-                <marker date="1440963445605" expanded="true" signature="2741:2782" placeholder="Insert into ..." />
-                <marker date="1440963445605" expanded="true" signature="2741:2794" placeholder="Insert into ..." />
-                <marker date="1440963445605" expanded="true" signature="2741:2811" placeholder="Insert into ..." />
-                <marker date="1440963445605" expanded="true" signature="2812:2835" placeholder="update Netwo..." />
-                <marker date="1440963445605" expanded="true" signature="3553:3598" placeholder="SELECT * fro..aps_name..." />
+                <element signature="e#2181#2267#0#PHP" expanded="false" />
+                <element signature="e#2635#2711#0#PHP" expanded="false" />
+                <element signature="e#4785#4843#0#PHP" expanded="false" />
+                <marker date="1440971725231" expanded="true" signature="258:291" placeholder="Insert into ..." />
+                <marker date="1440971725231" expanded="true" signature="258:308" placeholder="Insert into ..." />
+                <marker date="1440971725231" expanded="true" signature="309:326" placeholder="update AP_Ma..." />
+                <marker date="1440971725231" expanded="true" signature="1078:1112" placeholder="SELECT * fro..aps..." />
+                <marker date="1440971725231" expanded="true" signature="2822:2863" placeholder="Insert into ..." />
+                <marker date="1440971725231" expanded="true" signature="2822:2875" placeholder="Insert into ..." />
+                <marker date="1440971725231" expanded="true" signature="2822:2892" placeholder="Insert into ..." />
+                <marker date="1440971725231" expanded="true" signature="2893:2916" placeholder="update Netwo..." />
+                <marker date="1440971725231" expanded="true" signature="3634:3679" placeholder="SELECT * fro..aps_name..." />
+                <marker date="1440971725231" expanded="true" signature="5345:5474" placeholder="INSERT INTO ..." />
+                <marker date="1440971725231" expanded="true" signature="5345:5491" placeholder="INSERT INTO ..." />
+                <marker date="1440971725231" expanded="true" signature="5492:5509" placeholder="update id_AP..." />
+                <marker date="1440971725231" expanded="true" signature="6991:7076" placeholder="INSERT INTO ..." />
+                <marker date="1440971725231" expanded="true" signature="6991:7113" placeholder="INSERT INTO ..." />
+                <marker date="1440971725231" expanded="true" signature="7114:7168" placeholder="update id_Ne..." />
               </folding>
             </state>
           </provider>
@@ -50,8 +61,16 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Rotariu Dan Andrei" />
+      </list>
+    </option>
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -76,6 +95,73 @@
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="754" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code SmellPHP</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>HAML</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript function metricsJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>PHPDocPHP</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>UndefinedPHP</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Blade files</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -159,25 +245,25 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="sshConsole" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="143" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="134" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="172" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="163" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="173" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="163" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="848" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="832" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="166" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="155" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="164" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="153" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="166" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="155" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="840" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="829" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RunManager" selected="PHP Script.functions.php">
@@ -214,6 +300,10 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="NONE" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -230,7 +320,13 @@
       <option name="project" value="LOCAL" />
       <updated>1440963447587</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added AP_Details">
+      <created>1440967219184</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1440967219184</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -238,18 +334,18 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32868218" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34083602" sideWeight="0.49394855" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868218" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3279743" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13250366" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13691376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -273,12 +369,15 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="added function for inserting AP_NAME" />
-    <option name="LAST_COMMIT_MESSAGE" value="added function for inserting AP_NAME" />
+    <MESSAGE value="Added AP_Details" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AP_Details" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -289,35 +388,53 @@
           <folding>
             <element signature="e#7#35#0#PHP" expanded="true" />
             <element signature="e#63#150#0#PHP" expanded="false" />
-            <marker date="1440963445605" expanded="true" signature="258:291" placeholder="Insert into ..." />
-            <marker date="1440963445605" expanded="true" signature="258:308" placeholder="Insert into ..." />
-            <marker date="1440963445605" expanded="true" signature="309:326" placeholder="update AP_Ma..." />
-            <marker date="1440963445605" expanded="true" signature="1078:1112" placeholder="SELECT * fro..aps..." />
-            <marker date="1440963445605" expanded="true" signature="2741:2782" placeholder="Insert into ..." />
-            <marker date="1440963445605" expanded="true" signature="2741:2794" placeholder="Insert into ..." />
-            <marker date="1440963445605" expanded="true" signature="2741:2811" placeholder="Insert into ..." />
-            <marker date="1440963445605" expanded="true" signature="2812:2835" placeholder="update Netwo..." />
-            <marker date="1440963445605" expanded="true" signature="3553:3598" placeholder="SELECT * fro..aps_name..." />
+            <element signature="e#2181#2267#0#PHP" expanded="false" />
+            <element signature="e#2635#2711#0#PHP" expanded="false" />
+            <element signature="e#4785#4843#0#PHP" expanded="false" />
+            <marker date="1440971725231" expanded="true" signature="258:291" placeholder="Insert into ..." />
+            <marker date="1440971725231" expanded="true" signature="258:308" placeholder="Insert into ..." />
+            <marker date="1440971725231" expanded="true" signature="309:326" placeholder="update AP_Ma..." />
+            <marker date="1440971725231" expanded="true" signature="1078:1112" placeholder="SELECT * fro..aps..." />
+            <marker date="1440971725231" expanded="true" signature="2822:2863" placeholder="Insert into ..." />
+            <marker date="1440971725231" expanded="true" signature="2822:2875" placeholder="Insert into ..." />
+            <marker date="1440971725231" expanded="true" signature="2822:2892" placeholder="Insert into ..." />
+            <marker date="1440971725231" expanded="true" signature="2893:2916" placeholder="update Netwo..." />
+            <marker date="1440971725231" expanded="true" signature="3634:3679" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1440971725231" expanded="true" signature="5345:5474" placeholder="INSERT INTO ..." />
+            <marker date="1440971725231" expanded="true" signature="5345:5491" placeholder="INSERT INTO ..." />
+            <marker date="1440971725231" expanded="true" signature="5492:5509" placeholder="update id_AP..." />
+            <marker date="1440971725231" expanded="true" signature="6991:7076" placeholder="INSERT INTO ..." />
+            <marker date="1440971725231" expanded="true" signature="6991:7113" placeholder="INSERT INTO ..." />
+            <marker date="1440971725231" expanded="true" signature="7114:7168" placeholder="update id_Ne..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46701846">
-          <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.046703298">
+          <caret line="176" column="22" selection-start-line="176" selection-start-column="22" selection-end-line="176" selection-end-column="22" />
           <folding>
             <element signature="e#7#35#0#PHP" expanded="true" />
             <element signature="e#63#150#0#PHP" expanded="false" />
-            <marker date="1440963445605" expanded="true" signature="258:291" placeholder="Insert into ..." />
-            <marker date="1440963445605" expanded="true" signature="258:308" placeholder="Insert into ..." />
-            <marker date="1440963445605" expanded="true" signature="309:326" placeholder="update AP_Ma..." />
-            <marker date="1440963445605" expanded="true" signature="1078:1112" placeholder="SELECT * fro..aps..." />
-            <marker date="1440963445605" expanded="true" signature="2741:2782" placeholder="Insert into ..." />
-            <marker date="1440963445605" expanded="true" signature="2741:2794" placeholder="Insert into ..." />
-            <marker date="1440963445605" expanded="true" signature="2741:2811" placeholder="Insert into ..." />
-            <marker date="1440963445605" expanded="true" signature="2812:2835" placeholder="update Netwo..." />
-            <marker date="1440963445605" expanded="true" signature="3553:3598" placeholder="SELECT * fro..aps_name..." />
+            <element signature="e#2181#2267#0#PHP" expanded="false" />
+            <element signature="e#2635#2711#0#PHP" expanded="false" />
+            <element signature="e#4785#4843#0#PHP" expanded="false" />
+            <marker date="1440971725231" expanded="true" signature="258:291" placeholder="Insert into ..." />
+            <marker date="1440971725231" expanded="true" signature="258:308" placeholder="Insert into ..." />
+            <marker date="1440971725231" expanded="true" signature="309:326" placeholder="update AP_Ma..." />
+            <marker date="1440971725231" expanded="true" signature="1078:1112" placeholder="SELECT * fro..aps..." />
+            <marker date="1440971725231" expanded="true" signature="2822:2863" placeholder="Insert into ..." />
+            <marker date="1440971725231" expanded="true" signature="2822:2875" placeholder="Insert into ..." />
+            <marker date="1440971725231" expanded="true" signature="2822:2892" placeholder="Insert into ..." />
+            <marker date="1440971725231" expanded="true" signature="2893:2916" placeholder="update Netwo..." />
+            <marker date="1440971725231" expanded="true" signature="3634:3679" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1440971725231" expanded="true" signature="5345:5474" placeholder="INSERT INTO ..." />
+            <marker date="1440971725231" expanded="true" signature="5345:5491" placeholder="INSERT INTO ..." />
+            <marker date="1440971725231" expanded="true" signature="5492:5509" placeholder="update id_AP..." />
+            <marker date="1440971725231" expanded="true" signature="6991:7076" placeholder="INSERT INTO ..." />
+            <marker date="1440971725231" expanded="true" signature="6991:7113" placeholder="INSERT INTO ..." />
+            <marker date="1440971725231" expanded="true" signature="7114:7168" placeholder="update id_Ne..." />
           </folding>
         </state>
       </provider>

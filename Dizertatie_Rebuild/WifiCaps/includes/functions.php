@@ -71,6 +71,11 @@ class wifiCapture
         return $connection;
     }
 
+    /**
+     * @param $AP_NAME
+     * @param $AP_ID
+     * @return array
+     */
     function addAPName($AP_NAME,$AP_ID)
     {
         $mysqli = $this->connectToDatabase();
@@ -117,10 +122,15 @@ class wifiCapture
         }
     }
 
-
+    /**
+     * @param $AP_Details
+     * @return array
+     */
     function addApDetails($AP_Details)
     {
         $mysqli = $this->connectToDatabase();
+
+
         $apId = $AP_Details["id_APs"];
         $encryptionType = $AP_Details["Encryption_Type"];
         $transmissionChannel = $AP_Details["Transmission_Channel"];
@@ -130,39 +140,80 @@ class wifiCapture
         $password = $AP_Details["Password"];
         $timeStamp = $AP_Details["DateTime"];
 
-        $query = "Insert into aps_details(id_APs,Encryption_Type,Transmission_Channel,Frequency,lat,lng,Password,DateTime) VALUES(?,?,?,?,?,?,?,?)";
+        echo $query = "INSERT INTO aps_details (id_APs,Encryption_Type,Transmssion_Channel,Frequency,lat,lng,Password,DateTime) VALUES (?,?,?,?,?,?,?,?) on duplicate key update id_APs=(?)";
+
         if (!($stmt = $mysqli->prepare($query))) {
-            return array("Status" => 0, "Message" => "Could not prepare query. Error: " . $stmt->error);
+            return array("Status" => 0, "Message" => "Could not prepare query . $query Error: " . $stmt->error . " " . $stmt->errno);
         } else {
-            $stmt->bind_param("ssssssss", $apId, $encryptionType, $transmissionChannel, $frequency, $latitude, $longitude, $password, $timeStamp);
+            $stmt->bind_param("isssssssi", $apId, $encryptionType, $transmissionChannel, $frequency, $latitude, $longitude, $password, $timeStamp, $apId);
             if (!($stmt->execute())) {
                 return array("Status" => 0, "Message" => "Could not prepare query. Error: " . $stmt->error);
             } else {
                 $id = $stmt->insert_id;
+                $stmt->close();
                 if ($id != 0) {
                     return array("Status" => 1, "Message" => array("Msg" => "Successfully Inserted AP Details: " . $AP_Details, "Return" => $id));
+                } else {
+                    return array("Status" => 1, "Message" => array("Msg" => "Successfully Inserted AP Details.", "Return" => $AP_Details));
                 }
 
             }
         }
     }
+
     function addClient($Client_Details)
     {
         $mysqli = $this->connectToDatabase();
+
+
+        $clientApId = $Client_Details["id_Ap"];
+        $clientAPName = $Client_Details["id_Network_Name"];
+        $clientMac = $Client_Details["Station_Mac"];
+        $clientLatitude = $Client_Details["lat"];
+        $clientLongitude = $Client_Details["lng"];
+        $clientPower = $Client_Details["Station_Power"];
+
+        $query = "INSERT INTO sniffed_stations(id_Ap,id_Network_Name,Station_Mac,lat,lng,Station_Power) VALUES(?,?,?,?,?,?) on duplicate key update id_Network_Name=(?), Station_Mac=(?), id_Ap=(?)";
+        if (!($stmt = $mysqli->prepare($query))) {
+            return array("Status" => 0, "Message" => "Could not prepare query " . $query . ". Error: " . $stmt->error);
+        } else {
+            $stmt->bind_param("sssssssss", $clientApId, $clientAPName, $clientMac, $clientLatitude, $clientLongitude, $clientPower, $clientAPName, $clientMac, $clientApId);
+            if (!($stmt->execute())) {
+                return array("Status" => 0, "Message" => "Could not prepare query. $query.  Error: " . $stmt->error);
+            } else {
+                $id = $stmt->insert_id;
+                return array("Status" => 1, "Message" => array("Msg" => "Successfully Inserted Client Details: " . $Client_Details, "Return" => $id));
+            }
+        }
     }
+
+    /**
+     * @param $Client_Probes
+     */
     function addClientProbes($Client_Probes)
     {
         $mysqli = $this->connectToDatabase();
     }
 
+    /**
+     * @param $AP_Id
+     */
     function getAPMac($AP_Id)
     {
         $mysqli = $this->connectToDatabase();
     }
+
+    /**
+     * @param $AP_Name
+     */
     function getAPByName($AP_Name)
     {
         $mysqli = $this->connectToDatabase();
     }
+
+    /**
+     * @param $AP_Name
+     */
     function getAPDetailsByName($AP_Name)
     {
         $mysqli = $this->connectToDatabase();
@@ -178,13 +229,38 @@ class wifiCapture
     function getAPByType($AP_Type)
     {
         $mysqli = $this->connectToDatabase();
-
     }
-
 }
 
 $wifi = new wifiCapture();
 $MAC = $wifi->addAPMac("11:11:11:11:11:12");
 $mac_ID = $MAC["Message"]["Return"];
 $AP_NAME = $wifi->addAPName("AlucardATEM", $mac_ID);
-print_r($AP_NAME);
+
+
+$id_AP_Name = $AP_NAME["Message"]["Return"]["id"];
+$id_AP = $AP_NAME["Message"]["Return"]["id_APs"];
+$Network_Name = $AP_NAME["Message"]["Return"]["Network_Name"];
+
+$client_Data["id_APs"] = $id_AP;
+$client_Data["Encryption_Type"] = "WEP";
+$client_Data["Transmission_Channel"] = 6;
+$client_Data["Frequency"] = 300;
+$client_Data["lat"] = 200.2;
+$client_Data["lng"] = 500.1;
+$client_Data["Password"] = "souten";
+$client_Data["DateTime"] = date("Y-m-d H:i:s");
+
+$ap_Details = $wifi->addApDetails($client_Data);
+
+
+echo $Client_Details["id_Ap"] = $id_AP;
+echo $Client_Details["id_Network_Name"] = $id_AP_Name;
+$Client_Details["Station_Mac"] = "22:22:22:22:22:22";
+$Client_Details["lat"] = 200.3;
+$Client_Details["lng"] = 500.0;
+$Client_Details["Station_Power"] = 30;
+
+
+$addClient = $wifi->addClient($Client_Details);
+print_r($addClient);
