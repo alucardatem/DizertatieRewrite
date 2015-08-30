@@ -263,4 +263,5 @@ $Client_Details["Station_Power"] = 30;
 
 
 $addClient = $wifi->addClient($Client_Details);
-print_r($addClient);
+
+
