@@ -120,39 +120,64 @@ class wifiCapture
 
     function addApDetails($AP_Details)
     {
+        $mysqli = $this->connectToDatabase();
+        $apId = $AP_Details["id_APs"];
+        $encryptionType = $AP_Details["Encryption_Type"];
+        $transmissionChannel = $AP_Details["Transmission_Channel"];
+        $frequency = $AP_Details["Frequency"];
+        $latitude = $AP_Details["lat"];
+        $longitude = $AP_Details["lng"];
+        $password = $AP_Details["Password"];
+        $timeStamp = $AP_Details["DateTime"];
 
+        $query = "Insert into aps_details(id_APs,Encryption_Type,Transmission_Channel,Frequency,lat,lng,Password,DateTime) VALUES(?,?,?,?,?,?,?,?)";
+        if (!($stmt = $mysqli->prepare($query))) {
+            return array("Status" => 0, "Message" => "Could not prepare query. Error: " . $stmt->error);
+        } else {
+            $stmt->bind_param("ssssssss", $apId, $encryptionType, $transmissionChannel, $frequency, $latitude, $longitude, $password, $timeStamp);
+            if (!($stmt->execute())) {
+                return array("Status" => 0, "Message" => "Could not prepare query. Error: " . $stmt->error);
+            } else {
+                $id = $stmt->insert_id;
+                if ($id != 0) {
+                    return array("Status" => 1, "Message" => array("Msg" => "Successfully Inserted AP Details: " . $AP_Details, "Return" => $id));
+                }
+
+            }
+        }
     }
     function addClient($Client_Details)
     {
-
+        $mysqli = $this->connectToDatabase();
     }
     function addClientProbes($Client_Probes)
     {
-
+        $mysqli = $this->connectToDatabase();
     }
 
     function getAPMac($AP_Id)
     {
-
+        $mysqli = $this->connectToDatabase();
     }
     function getAPByName($AP_Name)
     {
-
+        $mysqli = $this->connectToDatabase();
     }
     function getAPDetailsByName($AP_Name)
     {
-
+        $mysqli = $this->connectToDatabase();
     }
     function getClientLocations($Client_Mac)
     {
-
+        $mysqli = $this->connectToDatabase();
     }
     function getAPLocations()
     {
-
+        $mysqli = $this->connectToDatabase();
     }
     function getAPByType($AP_Type)
     {
+        $mysqli = $this->connectToDatabase();
 
     }
 
