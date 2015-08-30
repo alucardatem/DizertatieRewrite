@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\WifiCaps.clpprj">
+	<settings><PM_URL><![CDATA[D:/Dizertatie_Rebuild/WifiCaps]]></PM_URL><PM_HOME_URL><![CDATA[D:/Dizertatie_Rebuild/WifiCaps]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";"/><added value=""/><lastopfiles>
+		<file name="D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php"/>
+	</lastopfiles>
+	<errors version="5.3">
+	</errors>
+	<codestructure version="5.0">
+		<phptree>
+			<treenode node="wificapture;PHP:Class Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f0;2;1;82;;;;vpos;;v;;r;;d0,3;;b0,0;;m">
+				<treenode node="__construct;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;4;2;7;;;;vpos;;v;;r;;d1,5;;b0,0;;m">
+				</treenode>
+				<treenode node="addApDetails;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;44;2;47;;;;vpos;;v;;r;;d1,45;;b0,0;;mAP_Details;;p">
+					<treenode node="AP_Details;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f23;44;34;44;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="addAPMac;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;22;2;39;;;;vpos;;v;;r;;d1,23;;b0,0;;mAP_MAC;;p">
+					<treenode node="AP_MAC;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f19;22;26;22;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="mysqli;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f2;24;9;24;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="queryInsert;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f2;25;14;25;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="stmt;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f7;26;12;26;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="addAPName;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;40;2;43;;;;vpos;;v;;r;;d1,41;;b0,0;;mAP_NAME;;p">
+					<treenode node="AP_NAME;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f20;40;28;40;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="addClient;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;48;2;51;;;;vpos;;v;;r;;d1,49;;b0,0;;mClient_Details;;p">
+					<treenode node="Client_Details;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f20;48;35;48;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="addClientProbes;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;52;2;55;;;;vpos;;v;;r;;d1,53;;b0,0;;mClient_Probes;;p">
+					<treenode node="Client_Probes;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f26;52;40;52;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="connectToDatabase;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;9;2;20;;;;vpos;;v;;r;;d1,10;;b0,0;;m">
+					<treenode node="connection;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f2;15;13;15;;;;vposmysqli;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="database;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f2;14;11;14;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="hostname;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f2;11;11;11;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="password;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f2;13;11;13;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+					<treenode node="username;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f2;12;11;12;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="getAPByName;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;61;2;64;;;;vpos;;v;;r;;d1,62;;b0,0;;mAP_Name;;p">
+					<treenode node="AP_Name;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f22;61;30;61;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="getAPByType;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;77;2;80;;;;vpos;;v;;r;;d1,78;;b0,0;;mAP_Type;;p">
+					<treenode node="AP_Type;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f22;77;30;77;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="getAPDetailsByName;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;65;2;68;;;;vpos;;v;;r;;d1,66;;b0,0;;mAP_Name;;p">
+					<treenode node="AP_Name;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f29;65;37;65;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="getAPLocations;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;73;2;76;;;;vpos;;v;;r;;d1,74;;b0,0;;m">
+				</treenode>
+				<treenode node="getAPMac;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;57;2;60;;;;vpos;;v;;r;;d1,58;;b0,0;;mAP_Id;;p">
+					<treenode node="AP_Id;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f19;57;25;57;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+				<treenode node="getClientLocations;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;69;2;72;;;;vpos;;v;;r;;d1,70;;b0,0;;mClient_Mac;;p">
+					<treenode node="Client_Mac;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f29;69;40;69;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+					</treenode>
+				</treenode>
+			</treenode>
+			<treenode node="Add_AP_Details;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;15;1;18;;;;vpos;;v;;r;;d0,16;;b0,0;;mAP_Details;;p">
+				<treenode node="AP_Details;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f24;15;35;15;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f24;15;35;15;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+			<treenode node="Add_AP_MAC;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;7;1;10;;;;vpos;;v;;r;;d0,8;;b0,0;;mAP_MAC;;p">
+				<treenode node="AP_MAC;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f20;7;27;7;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f20;7;27;7;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+			<treenode node="Add_AP_Name;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;11;1;14;;;;vpos;;v;;r;;d0,12;;b0,0;;mAP_NAME;;p">
+				<treenode node="AP_NAME;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f21;11;29;11;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f21;11;29;11;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+			<treenode node="Add_Client;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;19;1;22;;;;vpos;;v;;r;;d0,20;;b0,0;;mClient_Details;;p">
+				<treenode node="Client_Details;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f20;19;35;19;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f20;19;35;19;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+			<treenode node="Add_Client_Probes;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;23;1;26;;;;vpos;;v;;r;;d0,24;;b0,0;;mClient_Probes;;p">
+				<treenode node="Client_Probes;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f27;23;41;23;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f27;23;41;23;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+			<treenode node="DB_Connect;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;2;1;5;;;;vpos;;v;;r;;d0,3;;b0,0;;mhostname;;pusername;;ppassword;;pdatabase;;p">
+				<treenode node="database;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f50;2;59;2;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f50;2;59;2;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="hostname;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f20;2;29;2;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f20;2;29;2;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="password;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f40;2;49;2;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f40;2;49;2;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+				<treenode node="username;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f30;2;39;2;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f30;2;39;2;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+			<treenode node="GET_AP_By_Type;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;48;1;51;;;;vpos;;v;;r;;d0,49;;b0,0;;mAP_Type;;p">
+				<treenode node="AP_Type;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f24;48;32;48;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f24;48;32;48;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+			<treenode node="GET_AP_Details;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;36;1;39;;;;vpos;;v;;r;;d0,37;;b0,0;;mAP_Name;;p">
+				<treenode node="AP_Name;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f24;36;32;36;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f24;36;32;36;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+			<treenode node="GET_AP_Id;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;32;1;35;;;;vpos;;v;;r;;d0,33;;b0,0;;mAP_Name;;p">
+				<treenode node="AP_Name;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f19;32;27;32;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f19;32;27;32;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+			<treenode node="GET_AP_Location;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;44;1;47;;;;vpos;;v;;r;;d0,45;;b0,0;;m">
+			</treenode>
+			<treenode node="GET_Ap_Mac;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;28;1;31;;;;vpos;;v;;r;;d0,29;;b0,0;;mAP_Id;;p">
+				<treenode node="AP_Id;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f20;28;26;28;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f20;28;26;28;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+			<treenode node="GET_Client_Locations;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f0;40;1;43;;;;vpos;;v;;r;;d0,41;;b0,0;;mClient_Mac;;p">
+				<treenode node="Client_Mac;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\Codelobster0.php;f30;40;41;40;;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f30;40;41;40;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+				</treenode>
+			</treenode>
+		</phptree>
+		<jstree>
+		</jstree>
+		<scsstree>
+		</scsstree>
+		<lesstree>
+		</lesstree>
+	</codestructure><cakedata>
+	</cakedata>
+	<dplmenupath>
+	</dplmenupath><laravael>
+	</laravael><smartyassings>
+	</smartyassings><twigtemplate>
+	</twigtemplate><yiidata>
+	</yiidata>
+	<todoblock>
+	</todoblock>
+	<filescache>
+		<file name="D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php" crc="-1787362518"/>
+	</filescache>
+</project>
