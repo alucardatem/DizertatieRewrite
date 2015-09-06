@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1155c2e-e0bf-4698-a019-932b2ac30151" name="Default" comment="made modifications for add AP_Details and add_AP_name" />
+    <list default="true" id="d1155c2e-e0bf-4698-a019-932b2ac30151" name="Default" comment="made modifications for add AP_Details and add_AP_name">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WifiCaps/AP.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WifiCaps/Client.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WifiCaps/Logger.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WifiCaps/includes/Logger.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WifiCaps/MapGenerator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WifiCaps/MySQLiDb.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WifiCaps/Scanner.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WifiCaps/includes/functions.php" afterPath="$PROJECT_DIR$/WifiCaps/includes/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Dizertatie_Rebuild.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,20 +35,129 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7197802">
-              <caret line="265" column="0" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
               <folding>
-                <element signature="e#7#35#0#PHP" expanded="true" />
-                <marker date="1440972228888" expanded="true" signature="258:308" placeholder="Insert into ..." />
-                <marker date="1440972228888" expanded="true" signature="309:326" placeholder="update AP_Ma..." />
-                <marker date="1440972228888" expanded="true" signature="1078:1112" placeholder="SELECT * fro..aps..." />
-                <marker date="1440972228888" expanded="true" signature="2822:2892" placeholder="Insert into ..." />
-                <marker date="1440972228888" expanded="true" signature="2893:2916" placeholder="update Netwo..." />
-                <marker date="1440972228888" expanded="true" signature="3634:3679" placeholder="SELECT * fro..aps_name..." />
-                <marker date="1440972228888" expanded="true" signature="5345:5491" placeholder="INSERT INTO ..." />
-                <marker date="1440972228888" expanded="true" signature="5492:5509" placeholder="update id_AP..." />
-                <marker date="1440972228888" expanded="true" signature="6937:7059" placeholder="INSERT INTO ..." />
-                <marker date="1440972228888" expanded="true" signature="7060:7114" placeholder="update id_Ne..." />
+                <element signature="e#2369#2455#0#PHP" expanded="false" />
+                <element signature="e#2543#4474#0#PHP" expanded="false" />
+                <element signature="e#4480#4538#0#PHP" expanded="false" />
+                <element signature="e#7912#8188#0#PHP" expanded="false" />
+                <element signature="e#8377#8430#0#PHP" expanded="false" />
+                <element signature="e#8435#8473#0#PHP" expanded="false" />
+                <element signature="e#8478#8521#0#PHP" expanded="false" />
+                <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+                <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+                <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+                <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+                <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+                <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+                <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+                <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+                <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+                <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AP.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WifiCaps/AP.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.0384617">
+              <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+              <folding>
+                <element signature="e#630#987#0#PHP" expanded="false" />
+                <marker date="1441559662603" expanded="true" signature="1051:1085" placeholder="SELECT * fro..aps..." />
+                <marker date="1441559662603" expanded="true" signature="1936:1976" placeholder="SELECT id fr..aps_name..." />
+                <marker date="1441559662603" expanded="true" signature="2797:2842" placeholder="SELECT * fro..aps_name..." />
+                <marker date="1441559662603" expanded="true" signature="3823:3893" placeholder="INSERT INTO ..." />
+                <marker date="1441559662603" expanded="true" signature="3894:3917" placeholder="update Netwo..." />
+                <marker date="1441559662603" expanded="true" signature="4535:4585" placeholder="INSERT INTO ..." />
+                <marker date="1441559662603" expanded="true" signature="4586:4603" placeholder="update AP_Ma..." />
+                <marker date="1441559662603" expanded="true" signature="5806:5922" placeholder="insert into ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auto-01.kismet.netxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WifiCaps/captures/auto-01.kismet.netxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="4106" column="15" selection-start-line="4106" selection-start-column="15" selection-end-line="4106" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WifiCaps/Client.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.1923077">
+              <caret line="65" column="56" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
+              <folding>
+                <element signature="e#539#896#0#PHP" expanded="false" />
+                <marker date="1441573006009" expanded="true" signature="1462:1626" placeholder="INSERT into ..." />
+                <marker date="1441573006009" expanded="true" signature="1627:1650" placeholder="update DateL..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Scanner.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WifiCaps/Scanner.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.9615386">
+              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+              <folding>
+                <element signature="e#6#93#0#PHP" expanded="true" />
+                <element signature="e#165#180#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Logger.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WifiCaps/Logger.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wifi_cap.php" pinned="false" current-in-tab="false">
+        <entry file="file://D:/proiect dizertatie/capture_files/wifi_cap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="135" column="12" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
+              <folding>
+                <element signature="n#conn#0;n#!!top" expanded="false" />
+                <element signature="n#InsertAP#0;n#!!top" expanded="false" />
+                <element signature="n#InsertClient#0;n#!!top" expanded="false" />
+                <marker date="1441412949389" expanded="true" signature="750:849" placeholder="SELECT * fro..aps..." />
+                <marker date="1441412949389" expanded="true" signature="995:1290" placeholder="INSERT into ..." />
+                <marker date="1441412949389" expanded="true" signature="1291:1555" placeholder="UPDATE encry..." />
+                <marker date="1441412949389" expanded="true" signature="1661:1731" placeholder="SELECT id fr..aps..." />
+                <marker date="1441412949389" expanded="true" signature="1974:2042" placeholder="SELECT idAP,..clients..." />
+                <marker date="1441412949389" expanded="true" signature="2178:2390" placeholder="INSERT into ..." />
+                <marker date="1441412949389" expanded="true" signature="2547:2655" placeholder="Select lat,l..aps..." />
+                <marker date="1441412949389" expanded="true" signature="2895:2953" placeholder="update aps s..." />
+                <marker date="1441412949389" expanded="true" signature="7988:8166" placeholder="..." />
+                <marker date="1441412949389" expanded="true" signature="8191:8365" placeholder="..." />
+                <marker date="1441412949389" expanded="true" signature="8390:8571" placeholder="..." />
+                <marker date="1441412949389" expanded="true" signature="8596:8773" placeholder="..." />
+                <marker date="1441412949389" expanded="true" signature="8798:8977" placeholder="..." />
+                <marker date="1441412949389" expanded="true" signature="9002:9177" placeholder="..." />
+                <marker date="1441412949389" expanded="true" signature="9202:9382" placeholder="..." />
+                <marker date="1441412949389" expanded="true" signature="9407:9583" placeholder="..." />
+                <marker date="1441412949389" expanded="true" signature="9606:9671" placeholder="SELECT * fro..aps..." />
+                <marker date="1441412949389" expanded="true" signature="9769:9823" placeholder="SELECT count..aps..." />
+                <marker date="1441412949389" expanded="true" signature="10942:10998" placeholder="SELECT COUNT..." />
               </folding>
             </state>
           </provider>
@@ -47,6 +166,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="PUSH_TAGS">
@@ -56,7 +176,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/WifiCaps/includes/Logger.php" />
+        <option value="$PROJECT_DIR$/WifiCaps/DataBase.php" />
+        <option value="$PROJECT_DIR$/WifiCaps/MysqliDb.php" />
+        <option value="$PROJECT_DIR$/WifiCaps/MySQLiDb.php" />
         <option value="$PROJECT_DIR$/WifiCaps/includes/functions.php" />
+        <option value="$PROJECT_DIR$/WifiCaps/captures/auto-01.kismet.netxml" />
+        <option value="$PROJECT_DIR$/WifiCaps/MapGenerator.php" />
+        <option value="$PROJECT_DIR$/WifiCaps/Scanner.php" />
+        <option value="$PROJECT_DIR$/WifiCaps/AP.php" />
+        <option value="$PROJECT_DIR$/WifiCaps/Client.php" />
       </list>
     </option>
   </component>
@@ -168,6 +297,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -217,24 +347,60 @@
               <option name="myItemId" value="Dizertatie_Rebuild" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WifiCaps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dizertatie_Rebuild" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dizertatie_Rebuild" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="D:/proiect dizertatie/capture_files/wifi_cap.php" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="132" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="161" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="162" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="837" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="155" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="153" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="155" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="829" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
-  <component name="RunManager" selected="PHP Script.functions.php">
-    <configuration default="false" name="functions.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/WifiCaps/includes/functions.php">
-      <method />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.Scanner.php">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -253,16 +419,28 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="PHP Script.functions.php" />
+    <configuration default="false" name="Client.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/WifiCaps/Client.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="Scanner.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/WifiCaps/Scanner.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="AP.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/WifiCaps/AP.php">
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="PHP Script.Client.php" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Script.Scanner.php" />
+      <item index="2" class="java.lang.String" itemvalue="PHP Script.AP.php" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="PHP Script.functions.php" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SshConsoleOptionsProvider">
@@ -298,23 +476,24 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16641453" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34083602" sideWeight="0.49394855" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3279743" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13691376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5104334" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7784912" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3964687" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34083602" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -341,46 +520,731 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+    <entry file="file://$PROJECT_DIR$/WifiCaps/MySQLiDb.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="1348" column="5" selection-start-line="1348" selection-start-column="5" selection-end-line="1348" selection-end-column="5" />
           <folding>
-            <element signature="e#7#35#0#PHP" expanded="true" />
-            <marker date="1440972228888" expanded="true" signature="258:308" placeholder="Insert into ..." />
-            <marker date="1440972228888" expanded="true" signature="309:326" placeholder="update AP_Ma..." />
-            <marker date="1440972228888" expanded="true" signature="1078:1112" placeholder="SELECT * fro..aps..." />
-            <marker date="1440972228888" expanded="true" signature="2822:2892" placeholder="Insert into ..." />
-            <marker date="1440972228888" expanded="true" signature="2893:2916" placeholder="update Netwo..." />
-            <marker date="1440972228888" expanded="true" signature="3634:3679" placeholder="SELECT * fro..aps_name..." />
-            <marker date="1440972228888" expanded="true" signature="5345:5491" placeholder="INSERT INTO ..." />
-            <marker date="1440972228888" expanded="true" signature="5492:5509" placeholder="update id_AP..." />
-            <marker date="1440972228888" expanded="true" signature="6937:7059" placeholder="INSERT INTO ..." />
-            <marker date="1440972228888" expanded="true" signature="7060:7114" placeholder="update id_Ne..." />
+            <element signature="e#6#93#0#PHP" expanded="true" />
+            <marker date="1441400880099" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+          <folding>
+            <element signature="e#539#896#0#PHP" expanded="false" />
+            <marker date="1441573006009" expanded="true" signature="1462:1626" placeholder="INSERT into ..." />
+            <marker date="1441573006009" expanded="true" signature="1627:1650" placeholder="update DateL..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7038" column="48" selection-start-line="7038" selection-start-column="31" selection-end-line="7038" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Scanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+          <folding>
+            <element signature="e#6#93#0#PHP" expanded="true" />
+            <element signature="e#165#180#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7197802">
-          <caret line="265" column="0" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
-            <element signature="e#7#35#0#PHP" expanded="true" />
-            <marker date="1440972228888" expanded="true" signature="258:308" placeholder="Insert into ..." />
-            <marker date="1440972228888" expanded="true" signature="309:326" placeholder="update AP_Ma..." />
-            <marker date="1440972228888" expanded="true" signature="1078:1112" placeholder="SELECT * fro..aps..." />
-            <marker date="1440972228888" expanded="true" signature="2822:2892" placeholder="Insert into ..." />
-            <marker date="1440972228888" expanded="true" signature="2893:2916" placeholder="update Netwo..." />
-            <marker date="1440972228888" expanded="true" signature="3634:3679" placeholder="SELECT * fro..aps_name..." />
-            <marker date="1440972228888" expanded="true" signature="5345:5491" placeholder="INSERT INTO ..." />
-            <marker date="1440972228888" expanded="true" signature="5492:5509" placeholder="update id_AP..." />
-            <marker date="1440972228888" expanded="true" signature="6937:7059" placeholder="INSERT INTO ..." />
-            <marker date="1440972228888" expanded="true" signature="7060:7114" placeholder="update id_Ne..." />
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/AP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#630#987#0#PHP" expanded="false" />
+            <marker date="1441559662603" expanded="true" signature="1051:1085" placeholder="SELECT * fro..aps..." />
+            <marker date="1441559662603" expanded="true" signature="1936:1976" placeholder="SELECT id fr..aps_name..." />
+            <marker date="1441559662603" expanded="true" signature="2797:2842" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441559662603" expanded="true" signature="3823:3893" placeholder="INSERT INTO ..." />
+            <marker date="1441559662603" expanded="true" signature="3894:3917" placeholder="update Netwo..." />
+            <marker date="1441559662603" expanded="true" signature="4535:4585" placeholder="INSERT INTO ..." />
+            <marker date="1441559662603" expanded="true" signature="4586:4603" placeholder="update AP_Ma..." />
+            <marker date="1441559662603" expanded="true" signature="5806:5922" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/MySQLiDb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1348" column="5" selection-start-line="1348" selection-start-column="5" selection-end-line="1348" selection-end-column="5" />
+          <folding>
+            <element signature="e#6#93#0#PHP" expanded="true" />
+            <marker date="1441400880099" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+          <folding>
+            <element signature="e#539#896#0#PHP" expanded="false" />
+            <marker date="1441573006009" expanded="true" signature="1462:1626" placeholder="INSERT into ..." />
+            <marker date="1441573006009" expanded="true" signature="1627:1650" placeholder="update DateL..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7038" column="48" selection-start-line="7038" selection-start-column="31" selection-end-line="7038" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Scanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+          <folding>
+            <element signature="e#6#93#0#PHP" expanded="true" />
+            <element signature="e#165#180#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="5" selection-start-line="10" selection-start-column="3" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/AP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+          <folding>
+            <element signature="e#630#987#0#PHP" expanded="false" />
+            <marker date="1441559662603" expanded="true" signature="1051:1085" placeholder="SELECT * fro..aps..." />
+            <marker date="1441559662603" expanded="true" signature="1936:1976" placeholder="SELECT id fr..aps_name..." />
+            <marker date="1441559662603" expanded="true" signature="2797:2842" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441559662603" expanded="true" signature="3823:3893" placeholder="INSERT INTO ..." />
+            <marker date="1441559662603" expanded="true" signature="3894:3917" placeholder="update Netwo..." />
+            <marker date="1441559662603" expanded="true" signature="4535:4585" placeholder="INSERT INTO ..." />
+            <marker date="1441559662603" expanded="true" signature="4586:4603" placeholder="update AP_Ma..." />
+            <marker date="1441559662603" expanded="true" signature="5806:5922" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+          <folding>
+            <element signature="e#539#896#0#PHP" expanded="false" />
+            <marker date="1441573006009" expanded="true" signature="1462:1626" placeholder="INSERT into ..." />
+            <marker date="1441573006009" expanded="true" signature="1627:1650" placeholder="update DateL..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Scanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#93#0#PHP" expanded="true" />
+            <element signature="e#165#180#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="48" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="5" selection-start-line="10" selection-start-column="3" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/AP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#630#987#0#PHP" expanded="false" />
+            <marker date="1441559662603" expanded="true" signature="1051:1085" placeholder="SELECT * fro..aps..." />
+            <marker date="1441559662603" expanded="true" signature="1936:1976" placeholder="SELECT id fr..aps_name..." />
+            <marker date="1441559662603" expanded="true" signature="2797:2842" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441559662603" expanded="true" signature="3823:3893" placeholder="INSERT INTO ..." />
+            <marker date="1441559662603" expanded="true" signature="3894:3917" placeholder="update Netwo..." />
+            <marker date="1441559662603" expanded="true" signature="4535:4585" placeholder="INSERT INTO ..." />
+            <marker date="1441559662603" expanded="true" signature="4586:4603" placeholder="update AP_Ma..." />
+            <marker date="1441559662603" expanded="true" signature="5806:5922" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <folding>
+            <element signature="e#539#896#0#PHP" expanded="false" />
+            <marker date="1441573006009" expanded="true" signature="1462:1626" placeholder="INSERT into ..." />
+            <marker date="1441573006009" expanded="true" signature="1627:1650" placeholder="update DateL..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Scanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <folding>
+            <element signature="e#6#93#0#PHP" expanded="true" />
+            <element signature="e#165#180#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="48" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="5" selection-start-line="10" selection-start-column="3" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/AP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding>
+            <element signature="e#630#987#0#PHP" expanded="false" />
+            <marker date="1441559662603" expanded="true" signature="1051:1085" placeholder="SELECT * fro..aps..." />
+            <marker date="1441559662603" expanded="true" signature="1936:1976" placeholder="SELECT id fr..aps_name..." />
+            <marker date="1441559662603" expanded="true" signature="2797:2842" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441559662603" expanded="true" signature="3823:3893" placeholder="INSERT INTO ..." />
+            <marker date="1441559662603" expanded="true" signature="3894:3917" placeholder="update Netwo..." />
+            <marker date="1441559662603" expanded="true" signature="4535:4585" placeholder="INSERT INTO ..." />
+            <marker date="1441559662603" expanded="true" signature="4586:4603" placeholder="update AP_Ma..." />
+            <marker date="1441559662603" expanded="true" signature="5806:5922" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#539#896#0#PHP" expanded="false" />
+            <marker date="1441573006009" expanded="true" signature="1462:1626" placeholder="INSERT into ..." />
+            <marker date="1441573006009" expanded="true" signature="1627:1650" placeholder="update DateL..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="266" column="29" selection-start-line="266" selection-start-column="29" selection-end-line="266" selection-end-column="29" />
+          <folding>
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_9.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34797892">
+          <caret line="653" column="9" selection-start-line="653" selection-start-column="9" selection-end-line="653" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/mysqli.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34797892">
+          <caret line="1356" column="20" selection-start-line="1356" selection-start-column="20" selection-end-line="1356" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/MySQLiDb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#93#0#PHP" expanded="true" />
+            <marker date="1441400880099" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/MapGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7038" column="48" selection-start-line="7038" selection-start-column="31" selection-end-line="7038" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/proiect dizertatie/capture_files/wifi_cap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="135" column="12" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
+          <folding>
+            <element signature="n#conn#0;n#!!top" expanded="false" />
+            <element signature="n#InsertAP#0;n#!!top" expanded="false" />
+            <element signature="n#InsertClient#0;n#!!top" expanded="false" />
+            <marker date="1441412949389" expanded="true" signature="750:849" placeholder="SELECT * fro..aps..." />
+            <marker date="1441412949389" expanded="true" signature="995:1290" placeholder="INSERT into ..." />
+            <marker date="1441412949389" expanded="true" signature="1291:1555" placeholder="UPDATE encry..." />
+            <marker date="1441412949389" expanded="true" signature="1661:1731" placeholder="SELECT id fr..aps..." />
+            <marker date="1441412949389" expanded="true" signature="1974:2042" placeholder="SELECT idAP,..clients..." />
+            <marker date="1441412949389" expanded="true" signature="2178:2390" placeholder="INSERT into ..." />
+            <marker date="1441412949389" expanded="true" signature="2547:2655" placeholder="Select lat,l..aps..." />
+            <marker date="1441412949389" expanded="true" signature="2895:2953" placeholder="update aps s..." />
+            <marker date="1441412949389" expanded="true" signature="7988:8166" placeholder="..." />
+            <marker date="1441412949389" expanded="true" signature="8191:8365" placeholder="..." />
+            <marker date="1441412949389" expanded="true" signature="8390:8571" placeholder="..." />
+            <marker date="1441412949389" expanded="true" signature="8596:8773" placeholder="..." />
+            <marker date="1441412949389" expanded="true" signature="8798:8977" placeholder="..." />
+            <marker date="1441412949389" expanded="true" signature="9002:9177" placeholder="..." />
+            <marker date="1441412949389" expanded="true" signature="9202:9382" placeholder="..." />
+            <marker date="1441412949389" expanded="true" signature="9407:9583" placeholder="..." />
+            <marker date="1441412949389" expanded="true" signature="9606:9671" placeholder="SELECT * fro..aps..." />
+            <marker date="1441412949389" expanded="true" signature="9769:9823" placeholder="SELECT count..aps..." />
+            <marker date="1441412949389" expanded="true" signature="10942:10998" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Scanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9615386">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding>
+            <element signature="e#6#93#0#PHP" expanded="true" />
+            <element signature="e#165#180#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/captures/auto-01.kismet.netxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4106" column="15" selection-start-line="4106" selection-start-column="15" selection-end-line="4106" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/AP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.0384617">
+          <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+          <folding>
+            <element signature="e#630#987#0#PHP" expanded="false" />
+            <marker date="1441559662603" expanded="true" signature="1051:1085" placeholder="SELECT * fro..aps..." />
+            <marker date="1441559662603" expanded="true" signature="1936:1976" placeholder="SELECT id fr..aps_name..." />
+            <marker date="1441559662603" expanded="true" signature="2797:2842" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441559662603" expanded="true" signature="3823:3893" placeholder="INSERT INTO ..." />
+            <marker date="1441559662603" expanded="true" signature="3894:3917" placeholder="update Netwo..." />
+            <marker date="1441559662603" expanded="true" signature="4535:4585" placeholder="INSERT INTO ..." />
+            <marker date="1441559662603" expanded="true" signature="4586:4603" placeholder="update AP_Ma..." />
+            <marker date="1441559662603" expanded="true" signature="5806:5922" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1923077">
+          <caret line="65" column="56" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
+          <folding>
+            <element signature="e#539#896#0#PHP" expanded="false" />
+            <marker date="1441573006009" expanded="true" signature="1462:1626" placeholder="INSERT into ..." />
+            <marker date="1441573006009" expanded="true" signature="1627:1650" placeholder="update DateL..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+          <folding>
+            <element signature="e#2369#2455#0#PHP" expanded="false" />
+            <element signature="e#2543#4474#0#PHP" expanded="false" />
+            <element signature="e#4480#4538#0#PHP" expanded="false" />
+            <element signature="e#7912#8188#0#PHP" expanded="false" />
+            <element signature="e#8377#8430#0#PHP" expanded="false" />
+            <element signature="e#8435#8473#0#PHP" expanded="false" />
+            <element signature="e#8478#8521#0#PHP" expanded="false" />
+            <marker date="1441456938527" expanded="true" signature="375:425" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="426:443" placeholder="update AP_Ma..." />
+            <marker date="1441456938527" expanded="true" signature="1230:1264" placeholder="SELECT * fro..aps..." />
+            <marker date="1441456938527" expanded="true" signature="2604:2674" placeholder="Insert into ..." />
+            <marker date="1441456938527" expanded="true" signature="2675:2698" placeholder="update Netwo..." />
+            <marker date="1441456938527" expanded="true" signature="3391:3436" placeholder="SELECT * fro..aps_name..." />
+            <marker date="1441456938527" expanded="true" signature="4993:5139" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="5140:5157" placeholder="update id_AP..." />
+            <marker date="1441456938527" expanded="true" signature="6615:6737" placeholder="INSERT INTO ..." />
+            <marker date="1441456938527" expanded="true" signature="6738:6792" placeholder="update id_Ne..." />
           </folding>
         </state>
       </provider>
