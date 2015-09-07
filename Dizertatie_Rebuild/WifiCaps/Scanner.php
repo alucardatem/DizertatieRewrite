@@ -11,9 +11,11 @@ namespace WifiCap;
 require_once "AP.php";
 require_once "Client.php";
 require_once "Logger.php";
+require_once "MySQLi.php";
 use WifiCap\AP;
 use WifiCap\Client;
 use WifiCap\Logger;
+use WifiCap\MySQLi;
 
 class Scanner
 {
@@ -87,10 +89,10 @@ $LogErrorFile = "./logs/error.log";
 $LoggerInfo = new Logger($LogInfoFile);
 $LoggerError = new Logger($LogErrorFile);
 
-
+$dataBaseConnection = new MySQLi($LoggerError, $LoggerInfo);
 $data = new Scanner($LoggerError, $LoggerInfo);
-$ap = new AP($LoggerError, $LoggerInfo);
-$client = new Client($ap, $LoggerError, $LoggerInfo);
+$ap = new AP($dataBaseConnection->_connection, $LoggerError, $LoggerInfo);
+$client = new Client($ap, $dataBaseConnection->_connection, $LoggerError, $LoggerInfo);
 
 $i = 0;
 

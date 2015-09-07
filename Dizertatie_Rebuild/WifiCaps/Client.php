@@ -30,13 +30,13 @@ class Client
      * AP constructor.
      * @param $conn
      */
-    function __construct($APObj, $error, $log)
+    function __construct($APObj, $databaseConnection, $error, $log)
     {
 
         $this->AP = $APObj;
         $this->error = $error;
         $this->log = $log;
-        $this->mysqli = $this->AP->connectToDatabase();
+        $this->mysqli = $databaseConnection;
     }
 
 

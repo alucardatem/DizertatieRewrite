@@ -7,9 +7,6 @@
  */
 
 namespace WifiCap;
-
-use WifiCap\A;
-
 require_once "LogInterface.php";
 
 class Logger implements LogInterface
@@ -24,25 +21,6 @@ class Logger implements LogInterface
     public function __construct($_file)
     {
         $this->_file = $_file;
-    }
-
-    /**
-     * display log message
-     * @param $log
-     */
-    public function log($log, $logType = "info")
-    {
-        $logTypeArray = array("info", "warning", "error");
-        if (!in_array($logType, $logTypeArray)) {
-            $logType = "info";
-        }
-
-        if (!(is_string($log))) {
-            $log = json_encode($log);
-        }
-
-        $message = "[" . strtoupper($logType) . "][" . date("H:i:s") . "]-->" . $log . "\n";
-        file_put_contents($this->_file, $message, FILE_APPEND | LOCK_EX);
     }
 
     public function info($msg)

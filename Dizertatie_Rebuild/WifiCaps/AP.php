@@ -8,7 +8,9 @@
 
 namespace WifiCap;
 require_once "Logger.php";
+
 use WifiCap\Logger;
+
 
 
 class AP
@@ -48,32 +50,12 @@ class AP
      * AP constructor.
      * @param $conn
      */
-    function __construct($error, $log)
+    function __construct($databaseConnection, $error, $log)
     {
         $this->log = $log;
         $this->error = $error;
         $this->logPrefix = "[" . __CLASS__ . "][" . __FUNCTION__ . "]";
-        $this->mysqli = $this->connectToDatabase();
-    }
-
-    /**
-     * @param mixed $logPrefix
-     */
-
-
-
-
-    function connectToDatabase()
-    {
-        $_hostname = "localhost";
-        $_username = "root";
-        $_password = "";
-        $_database = "wifiaps";
-        $connection = mysqli_connect($_hostname, $_username, $_password, $_database);
-        if (!$connection) {
-            $this->log->error("[AP][connectToDatabase]connectToDatabase: Error connecting to db");
-        }
-        return $connection;
+        $this->mysqli = $databaseConnection;
     }
 
     public function getESSIDByBSSIDId($BSSIDId)
@@ -181,6 +163,7 @@ class AP
     public function getBSSID($BSSID)
     {
         $Query = "SELECT * from aps where AP_MAC=(?)";
+
         if ($stmt = $this->mysqli->prepare($Query)) {
             $stmt->bind_param("s", $BSSID);
             if ($stmt->execute()) {
