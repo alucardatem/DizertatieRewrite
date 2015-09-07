@@ -30,10 +30,12 @@ class MySQLi
      */
     public function __construct($_error, $_log)
     {
-        $this->_host = "localhost";
-        $this->_user = "root";
-        $this->_password = "";
-        $this->_database = "wifiaps";
+        require_once "dbConfig.php";
+        $this->_host = DB_HOST;
+        $this->_user = DB_USER;
+        $this->_password = DB_PASS;
+        $this->_database = DB_DATABASE;
+
         $this->_error = $_error;
         $this->_log = $_log;
         $this->logPrefix = "[" . __CLASS__ . "][" . __FUNCTION__ . "]";
@@ -57,5 +59,9 @@ class MySQLi
         return $connection;
     }
 
+    public function __destruct()
+    {
+        $this->_connection->close();
+    }
 
 }
