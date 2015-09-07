@@ -931,3 +931,150 @@
 [INFO][15:34:15]-->[Client][addClient]: There is no client to be added
 [INFO][15:34:15]-->[Client][addClient]: SUCCESS INSERT 40:6F:2A:E5:CE:4D | 73 | 73 | 2015-09-07 15:34:15 | 2015-09-07 15:34:15
 [INFO][15:34:15]-->[Client][addClient]: SUCCESS INSERT 00:15:AF:08:C7:7B | 73 | 73 | 2015-09-07 15:34:15 | 2015-09-07 15:34:15
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 00:1D:7E:AD:33:80 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED linksys to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 4 | 2427 27 |  |  | 07-09-2015 17:04:52 | 17003 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 82:4D:8E:86:91:48 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 3 | 2422 39 |  |  | 07-09-2015 17:04:52 | 17004 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 00:22:BD:E4:27:18 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED Codeless2 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+PSK WPA+AES-CCM | 6 | 2437 1 |  |  | 07-09-2015 17:04:52 | 17005 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED F8:D1:11:B8:11:34 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 1 | 2412 1 |  |  | 07-09-2015 17:04:52 | 17006 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 3C:1E:04:0E:43:2E to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED Concept to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+TKIP WPA+PSK WPA+AES-CCM | 11 | 2462 5 |  |  | 07-09-2015 17:04:52 | 17007 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 1C:AF:F7:23:49:58 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED RATP-VIDEO to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+TKIP WPA+PSK | 6 | 2437 19 |  |  | 07-09-2015 17:04:52 | 17008 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED C0:C1:C0:18:17:AB to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED IBW2 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+TKIP WPA+PSK | 11 | 2462 58 |  |  | 07-09-2015 17:04:52 | 17009 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 24:E9:B3:BB:72:DB to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED IBW to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+TKIP WPA+PSK WPA+AES-CCM | 6 | 2437 7 |  |  | 07-09-2015 17:04:52 | 17010 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED C0:4A:00:7B:C4:3C to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED HomeOnTheRange to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+PSK WPA+AES-CCM | 1 | 2412 15 |  |  | 07-09-2015 17:04:52 | 17011 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED D8:50:E6:95:7D:44 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED CODEIASI to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+PSK WPA+AES-CCM | 9 | 2452 67 |  |  | 07-09-2015 17:04:52 | 17012 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 4A:A2:2D:46:18:47 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED Onyx_Z to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 1 | 2412 62 |  |  | 07-09-2015 17:04:52 | 17013 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED AC:22:0B:D6:52:00 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED Fidelis to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+TKIP WPA+PSK WPA+AES-CCM | 6 | 2437 29 |  |  | 07-09-2015 17:04:52 | 17014 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 48:F8:B3:17:42:2C to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED FuturePower to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+TKIP WPA+PSK WPA+AES-CCM | 1 | 2412 394 |  |  | 07-09-2015 17:04:52 | 17015 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 10:FE:ED:B7:69:28 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED iWater to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+PSK WPA+AES-CCM | 11 | 2462 148 |  |  | 07-09-2015 17:04:52 | 17016 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 00:0C:42:FB:CC:3D to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED IBW-EW to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+PSK WPA+AES-CCM | 1 | 2412 1022 |  |  | 07-09-2015 17:04:52 | 17017 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 60:A4:4C:66:2C:DD to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED CODE932_GUEST to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED WPA+PSK WPA+AES-CCM | 10 | 2457 2195 |  |  | 07-09-2015 17:04:52 | 17018 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 62:B8:2D:86:92:CE to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED hpsetup to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 6 | 2437 2 |  |  | 07-09-2015 17:04:52 | 17019 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 5C:51:88:A0:1B:35 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 4 | 2427 6 |  |  | 07-09-2015 17:04:52 | 17020 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 44:6D:6C:6F:94:DF to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 8 | 2447 1 |  |  | 07-09-2015 17:04:52 | 17021 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED A0:EC:80:FC:74:3B to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 2 | 2417 1 |  |  | 07-09-2015 17:04:52 | 17022 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED DC:A9:71:A5:7F:35 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 8 | 2447 16 |  |  | 07-09-2015 17:04:52 | 17023 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 48:50:73:B2:30:78 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 3 | 2422 4 |  |  | 07-09-2015 17:04:52 | 17024 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED F8:2F:A8:B2:0F:F9 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 11 | 2462 6 |  |  | 07-09-2015 17:04:52 | 17025 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 64:B8:53:F4:BB:7D to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 9 | 2452 1 |  |  | 07-09-2015 17:04:52 | 17026 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 00:08:59:00:AA:25 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 10 | 2457 56 |  |  | 07-09-2015 17:04:52 | 17027 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED D0:DF:9A:C5:7B:F2 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 4 | 2427 4 |  |  | 07-09-2015 17:04:52 | 17028 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 2C:D0:5A:24:51:43 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 2 | 2417 4 |  |  | 07-09-2015 17:04:52 | 17029 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED 64:89:9A:39:A5:87 to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED [cloaked] to database
+[INFO][17:04:52]-->[WifiCap\AP][__construct]: SUCCESSFULLY ADDED OPN | 4 | 2427 5 |  |  | 07-09-2015 17:04:52 | 17030 to database
+[INFO][17:04:52]-->[Client][addClient]: There is no client to be added
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 7C:F9:0E:39:14:39 | 75 | 17004 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: There is no client to be added
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 9C:B7:0D:A6:2A:25 | 77 | 17006 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: There is no client to be added
+[INFO][17:04:52]-->[Client][addClient]: There is no client to be added
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 34:36:3B:6A:54:90 | 80 | 17009 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 90:00:4E:B5:36:0B | 80 | 17009 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: There is no client to be added
+[INFO][17:04:52]-->[Client][addClient]: There is no client to be added
+[INFO][17:04:52]-->[Client][addClient]: There is no client to be added
+[INFO][17:04:52]-->[Client][addClient]: There is no client to be added
+[INFO][17:04:52]-->[Client][addClient]: There is no client to be added
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 00:21:00:FC:83:67 | 86 | 17015 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT E4:12:1D:F0:81:A9 | 86 | 17015 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 18:3A:2D:5C:3B:F2 | 86 | 17015 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: There is no client to be added
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT B8:B4:2E:CC:D9:7E | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT F8:A9:D0:02:03:6B | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT CC:FA:00:CC:67:8E | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT AC:36:13:2B:22:4D | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT F8:A9:D0:75:1A:85 | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 80:E6:50:22:17:00 | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 9C:F3:87:CF:4F:56 | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 80:57:19:DA:10:3C | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT C4:42:02:F1:F4:E1 | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 50:2E:5C:D7:8F:55 | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 1C:99:4C:C5:E3:00 | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT F0:5A:09:09:B8:5C | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 78:31:C1:BE:08:38 | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 78:31:C1:BE:02:88 | 88 | 17017 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT F0:99:BF:62:40:89 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 98:D6:F7:8B:7E:0A | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT CC:3A:61:B1:31:01 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT C0:F2:FB:B0:DB:0E | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 28:9A:FA:2E:6D:84 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT F4:37:B7:01:00:B4 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 04:1E:64:EF:CB:76 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 00:F4:6F:22:AE:67 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 00:EE:BD:B3:91:DD | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 7C:D1:C3:DF:3D:B5 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 9C:04:EB:D5:0D:D6 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 00:15:00:57:5F:18 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 88:C9:D0:D9:B6:E1 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT C0:38:96:00:7B:BB | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 74:E5:0B:1A:E0:14 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT C4:8E:8F:17:E6:83 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 3C:15:C2:C8:AB:EE | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 64:76:BA:96:01:CA | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 00:0A:F5:3A:CB:9C | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT E0:F8:47:27:33:A6 | 89 | 17018 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT D4:85:64:3B:18:15 | 90 | 17019 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 5C:51:88:A0:1B:35 | 91 | 17020 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 44:6D:6C:6F:94:DF | 92 | 17021 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT A0:EC:80:FC:74:3B | 93 | 17022 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT DC:A9:71:A5:7F:35 | 94 | 17023 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 48:50:73:B2:30:78 | 95 | 17024 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT F8:2F:A8:B2:0F:F9 | 96 | 17025 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 64:B8:53:F4:BB:7D | 97 | 17026 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 00:08:59:00:AA:25 | 98 | 17027 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT D0:DF:9A:C5:7B:F2 | 99 | 17028 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 2C:D0:5A:24:51:43 | 100 | 17029 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
+[INFO][17:04:52]-->[Client][addClient]: SUCCESS INSERT 64:89:9A:39:A5:87 | 101 | 17030 | 2015-09-07 17:04:52 | 2015-09-07 17:04:52
