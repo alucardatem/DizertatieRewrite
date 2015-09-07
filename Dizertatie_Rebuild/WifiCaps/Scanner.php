@@ -10,24 +10,27 @@ namespace WifiCap;
 
 require_once "AP.php";
 require_once "Client.php";
+require_once "Logger.php";
 use WifiCap\AP;
 use WifiCap\Client;
+use WifiCap\Logger;
 
 class Scanner
 {
     protected $_APList;
     protected $_ClientList;
+    private $error;
+    private $log;
 
-    function createClient($Ap)
+    /**
+     * Scanner constructor.
+     * @param $error
+     * @param $log
+     */
+    public function __construct($error, $log)
     {
-    }
-
-    function createAP()
-    {
-    }
-
-    function assignClient($client, $Ap)
-    {
+        $this->error = $error;
+        $this->log = $log;
     }
 
     function parseXML($CaptureFolder)
@@ -60,8 +63,6 @@ class Scanner
                     $wifi["Client"]["lat"] = "";
                     $wifi["Client"]["lng"] = "";
                 }
-
-
                 $list[] = $wifi;
             }
 
@@ -71,13 +72,34 @@ class Scanner
 
     }
 
+    function parseCSV($CSV_FILE)
+    {
+
+    }
+
 
 }
 
-$data = new Scanner();
+
+$LogInfoFile = "./logs/info.log";
+$LogErrorFile = "./logs/error.log";
+
+$LoggerInfo = new Logger($LogInfoFile);
+$LoggerError = new Logger($LogErrorFile);
+
+
+$data = new Scanner($LoggerError, $LoggerInfo);
+$ap = new AP($LoggerError, $LoggerInfo);
+$client = new Client($ap, $LoggerError, $LoggerInfo);
+
+$i = 0;
+
+
 $list = $data->parseXML('captures/');
-$ap = new AP();
-$client = new Client();
 $ap->storeAP($list);
 $client->addClient($list);
+$SEARCH = $ap->searchByEncryption("OPN");
+print_r($SEARCH);
+
+
 

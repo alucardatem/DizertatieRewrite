@@ -4148,6 +4148,36 @@
 			<cdp-device></cdp-device>
 			<cdp-portid></cdp-portid>
 		</wireless-client>
+		<wireless-client number="2" type="established" first-time="Fri Nov 28 12:23:02 2014" last-time="Fri Nov 28 12:23:11 2014">
+        			<client-mac>00:15:AF:08:C7:7B</client-mac>
+        			<client-manuf>Unknown</client-manuf>
+        			<channel>1</channel>
+        			<maxseenrate>24.000000</maxseenrate>
+        			<packets>
+        				<LLC>0</LLC>
+        				<data>0</data>
+        				<crypt>0</crypt>
+        				<total>10</total>
+        				<fragments>0</fragments>
+        				<retries>0</retries>
+        			</packets>
+        			<snr-info>
+        				<last_signal_dbm>0</last_signal_dbm>
+        				<last_noise_dbm>0</last_noise_dbm>
+        				<last_signal_rssi>0</last_signal_rssi>
+        				<last_noise_rssi>0</last_noise_rssi>
+        				<min_signal_dbm>0</min_signal_dbm>
+        				<min_noise_dbm>0</min_noise_dbm>
+        				<min_signal_rssi>1024</min_signal_rssi>
+        				<min_noise_rssi>1024</min_noise_rssi>
+        				<max_signal_dbm>0</max_signal_dbm>
+        				<max_noise_dbm>0</max_noise_dbm>
+        				<max_signal_rssi>0</max_signal_rssi>
+        				<max_noise_rssi>0</max_noise_rssi>
+        			</snr-info>
+        			<cdp-device></cdp-device>
+        			<cdp-portid></cdp-portid>
+        		</wireless-client>
 		<snr-info>
 			<last_signal_dbm>0</last_signal_dbm>
 			<last_noise_dbm>0</last_noise_dbm>

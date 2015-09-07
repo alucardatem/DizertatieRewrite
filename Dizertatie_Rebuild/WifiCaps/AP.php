@@ -7,6 +7,9 @@
  */
 
 namespace WifiCap;
+require_once "Logger.php";
+use WifiCap\Logger;
+
 
 class AP
 {
@@ -31,15 +34,34 @@ class AP
 
     protected $_ClientList;
     protected $mysqli;
+    /**
+     * @var Logger
+     */
+    protected $log;
+    /**
+     * @var Logger
+     */
+    protected $error;
+    private $logPrefix;
 
     /**
      * AP constructor.
      * @param $conn
      */
-    function __construct()
+    function __construct($error, $log)
     {
+        $this->log = $log;
+        $this->error = $error;
+        $this->logPrefix = "[" . __CLASS__ . "][" . __FUNCTION__ . "]";
         $this->mysqli = $this->connectToDatabase();
     }
+
+    /**
+     * @param mixed $logPrefix
+     */
+
+
+
 
     function connectToDatabase()
     {
@@ -49,7 +71,7 @@ class AP
         $_database = "wifiaps";
         $connection = mysqli_connect($_hostname, $_username, $_password, $_database);
         if (!$connection) {
-            return "Error connecting to db";
+            $this->log->error("[AP][connectToDatabase]connectToDatabase: Error connecting to db");
         }
         return $connection;
     }
@@ -75,10 +97,12 @@ class AP
                     return 0;
                 }
             } else {
-                return array("Status" => 0, "Error" => $stmt->error);
+                $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
+                return array("Status" => "ERROR");
             }
         } else {
-            return array("Status" => 0, "Error" => $stmt->error);
+            $this->log->error($this->logPrefix . ": ERROR PREPARING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+            return array("Status" => "ERROR");
         }
 
     }
@@ -103,12 +127,14 @@ class AP
                 } else {
                     return 0;
                 }
-            } else {
-                return array("Status" => 0, "Error" => $stmt->error);
             }
-        } else {
-            return array("Status" => 0, "Error" => $stmt->error);
+            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
+            return array("Status" => "ERROR");
+
         }
+        $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
+        return array("Status" => "ERROR");
+
     }
 
     function storeAP($apList)
@@ -130,6 +156,7 @@ class AP
     {
         $id = $this->getBSSID($BSSID);
         if ($id != 0) {
+            $this->log->log($this->logPrefix . ": THE " . $BSSID . " already is in the database");
             return $id["Data"][0]["id"];
         }
 
@@ -140,13 +167,15 @@ class AP
 
                 $id = $stmt->insert_id;
                 $stmt->close();
+                $this->log->info($this->logPrefix . ": SUCCESSFULLY ADDED " . $BSSID . " to database");
                 return $id;
-            } else {
-                return array("Status" => 0, "Error" => $stmt->error);
             }
-        } else {
-            return array("Status" => 0, "Error" => $stmt->error);
+            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
+            return array("Status" => "ERROR");
         }
+        $this->log->info($this->logPrefix . ": ERROR PREPARING STATEMENT: " . $stmt->error);
+        return array("Status" => "ERROR");
+
     }
 
     public function getBSSID($BSSID)
@@ -170,10 +199,12 @@ class AP
                     return 0;
                 }
             } else {
-                return array("Status" => 0, "Error" => $stmt->error);
+                $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+                return array("Status" => "ERROR");
             }
         } else {
-            return array("Status" => 0, "Error" => $stmt->error);
+            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+            return array("Status" => "ERROR");
         }
     }
 
@@ -184,35 +215,85 @@ class AP
      */
     function addSSID($SSID, $idBSSID)
     {
+
         $Query = "INSERT INTO aps_name(id_APs,Network_Name) values(?,?) on duplicate key update Network_Name=(?)";
         if ($stmt = $this->mysqli->prepare($Query)) {
             $stmt->bind_param("sss", $idBSSID, $SSID, $SSID);
             if ($stmt->execute()) {
                 $id = $stmt->insert_id;
                 $stmt->close();
+                $this->log->info($this->logPrefix . ": SUCCESSFULLY ADDED " . $SSID . " to database");
                 return $id;
             } else {
-                return array("Status" => 0, "Error" => $stmt->error);
+                $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__, "error");
+                return array("Status" => "ERROR");
             }
         } else {
-            return array("Status" => 0, "Error" => $stmt->error);
+            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__, "error");
+            return array("Status" => "ERROR");
         }
     }
 
     function addAPDetails($Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $idESSID)
     {
-        $QUERY = "insert into aps_details(id_APs,Encryption_Type,Transmssion_Channel,Frequency,lat,lng,DateTime) VALUES(?,?,?,?,?,?,?)";
+
+        $QUERY = "insert into aps_details(id_APs,Encryption_Type,Transmssion_Channel,Frequency,lat,lng,DateTime) VALUES(?,?,?,?,?,?,?) on duplicate KEY update id_APS=?,Encryption_Type=?";
         if ($stmt = $this->mysqli->prepare($QUERY)) {
-            $stmt->bind_param("sssssss", $idESSID, $Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime);
+            $stmt->bind_param("sssssssss", $idESSID, $Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $idESSID, $Encryption);
             if ($stmt->execute()) {
-                $stmt->close();
+
+                $this->log->info($this->logPrefix . ": SUCCESSFULLY ADDED " . $Encryption . " | " . $TransmissionChannel . " | " . $Frequency . " | " . $lat . " | " . $lng . " | " . $DateTime . " | " . $idESSID . " to database");
+
                 return array("Status" => 1, "SUCCESS" => 1);
             } else {
-                return array("Status" => 0, "Error" => $stmt->errno);
+                $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+                return array("Status" => "ERROR");
             }
         } else {
-            return array("Status" => 0, "Error" => $stmt->errno);
+            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+            return array("Status" => "ERROR");
+        }
+
+
+    }
+
+    public function searchByEncryption($Encryption)
+    {
+
+        $Query = "SELECT aps_name.Network_Name,
+                            aps.AP_Mac,
+                            aps_details.Encryption_Type,
+                            aps_details.Transmssion_Channel,
+                            aps_details.Frequency,
+                            aps_details.lat,
+                            aps_details.lng,
+                            aps_details.Password from aps_details
+                  INNER JOIN aps_name as aps_name on aps_name.id_APs=aps_details.id_APs
+                  INNER JOIN aps on aps.id=aps_details.id_APs where aps_details.Encryption_Type like ?";
+        if ($stmt = $this->mysqli->prepare($Query)) {
+            $Encryption = '%' . $Encryption . '%';
+            $stmt->bind_param("s", $Encryption);
+            if ($stmt->execute()) {
+                $result = $stmt->get_result();
+                $i = 0;
+                while ($row[$i] = $result->fetch_assoc()) {
+                    ++$i;
+                }
+                $row = array_filter($row);
+                return json_encode($row);
+                $stmt->close();
+            } else {
+                $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+                return array("Status" => "ERROR");
+            }
+        } else {
+            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+            return array("Status" => "ERROR");
         }
 
     }
+
+
+
+
 }

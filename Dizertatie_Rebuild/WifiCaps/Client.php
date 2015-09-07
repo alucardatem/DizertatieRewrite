@@ -21,30 +21,25 @@ class Client
     protected $_Ap_BSSID_Id;
     private $AP;
 
+    private $log;
+    private $error;
+
     /**
      * protected $mysqli;
      * /**
      * AP constructor.
      * @param $conn
      */
-    function __construct()
+    function __construct($APObj, $error, $log)
     {
-        $this->mysqli = $this->connectToDatabase();
-        $this->AP = new AP();
+
+        $this->AP = $APObj;
+        $this->error = $error;
+        $this->log = $log;
+        $this->mysqli = $this->AP->connectToDatabase();
     }
 
-    function connectToDatabase()
-    {
-        $_hostname = "localhost";
-        $_username = "root";
-        $_password = "";
-        $_database = "wifiaps";
-        $connection = mysqli_connect($_hostname, $_username, $_password, $_database);
-        if (!$connection) {
-            return "Error connecting to db";
-        }
-        return $connection;
-    }
+
 
     function addClient($List)
     {
@@ -52,6 +47,7 @@ class Client
         foreach ($List as $key => $client_Array) {
 
             if (count($client_Array["Client"]) == 0) {
+                $this->log->log("[Client][addClient]: There is no client to be added");
                 continue;
             }
 
@@ -67,7 +63,7 @@ class Client
                     $lastSeenDate = date("Y-m-d H:i:s");
                     $stmt->bind_param("ssssssss", $idAPs, $IdNetworkName, $TerminalMac, $client_Array["Client"]["lat"], $client_Array["Client"]["lng"], $date, $lastSeenDate, $lastSeenDate);
                     if ($stmt->execute()) {
-                        echo "SUCCESS INSERT " . $TerminalMac . " | " . $idAPs . " | " . $IdNetworkName . " | " . $date . " | " . $lastSeenDate . "\n";
+                        $this->log->log("[Client][addClient]: SUCCESS INSERT " . $TerminalMac . " | " . $idAPs . " | " . $IdNetworkName . " | " . $date . " | " . $lastSeenDate);
                     }
                 }
             }
