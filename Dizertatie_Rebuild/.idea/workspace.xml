@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1155c2e-e0bf-4698-a019-932b2ac30151" name="Default" comment="sepparated mysql connection">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WifiCaps/dbConfig.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WifiCaps/MySQLi.php" afterPath="$PROJECT_DIR$/WifiCaps/MySQLi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WifiCaps/logs/info.log" afterPath="$PROJECT_DIR$/WifiCaps/logs/info.log" />
+      <change type="DELETED" beforePath="D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\t.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Dizertatie_Rebuild.iws" />
@@ -74,17 +72,7 @@
         <entry file="file://$PROJECT_DIR$/WifiCaps/dbConfig.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-4.576923">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="t.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7044" column="25" selection-start-line="7044" selection-start-column="25" selection-end-line="7044" selection-end-column="25" />
+              <caret line="7" column="15" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -121,35 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Logger.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Logger.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WifiCaps/Logger.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769">
+            <state vertical-scroll-proportion="0.16088328">
               <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <marker date="1441632393463" expanded="true" signature="442:494" placeholder=" display log message ..." />
-                <marker date="1441632393463" expanded="true" signature="660:700" placeholder="..." />
-                <marker date="1441632393463" expanded="true" signature="736:783" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="info.log" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WifiCaps/logs/info.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6443149">
-              <caret line="13" column="71" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="error.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WifiCaps/logs/error.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -529,7 +493,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441632395625</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="sepparated mysql connection">
+      <created>1441633079191</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1441633079191</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -614,14 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7038" column="48" selection-start-line="7038" selection-start-column="31" selection-end-line="7038" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WifiCaps/Scanner.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -668,11 +630,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1441632393463" expanded="true" signature="442:494" placeholder=" display log message ..." />
-            <marker date="1441632393463" expanded="true" signature="660:700" placeholder="..." />
-            <marker date="1441632393463" expanded="true" signature="736:783" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -689,14 +647,6 @@
             <marker date="1441632393538" expanded="true" signature="1316:1480" placeholder="INSERT into ..." />
             <marker date="1441632393538" expanded="true" signature="1481:1504" placeholder="update DateL..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7038" column="48" selection-start-line="7038" selection-start-column="31" selection-end-line="7038" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,11 +696,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1441632393463" expanded="true" signature="442:494" placeholder=" display log message ..." />
-            <marker date="1441632393463" expanded="true" signature="660:700" placeholder="..." />
-            <marker date="1441632393463" expanded="true" signature="736:783" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -778,14 +724,6 @@
             <element signature="e#6#93#0#PHP" expanded="true" />
             <element signature="e#219#234#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="48" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,11 +762,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1441632393463" expanded="true" signature="442:494" placeholder=" display log message ..." />
-            <marker date="1441632393463" expanded="true" signature="660:700" placeholder="..." />
-            <marker date="1441632393463" expanded="true" signature="736:783" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -856,14 +790,6 @@
             <element signature="e#6#93#0#PHP" expanded="true" />
             <element signature="e#219#234#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="48" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,11 +828,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1441632393463" expanded="true" signature="442:494" placeholder=" display log message ..." />
-            <marker date="1441632393463" expanded="true" signature="660:700" placeholder="..." />
-            <marker date="1441632393463" expanded="true" signature="736:783" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,26 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WifiCaps/t.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7044" column="25" selection-start-line="7044" selection-start-column="25" selection-end-line="7044" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WifiCaps/Logger.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <marker date="1441632393463" expanded="true" signature="442:494" placeholder=" display log message ..." />
-            <marker date="1441632393463" expanded="true" signature="660:700" placeholder="..." />
-            <marker date="1441632393463" expanded="true" signature="736:783" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WifiCaps/Scanner.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2545455">
@@ -1112,7 +1014,7 @@
     <entry file="file://$PROJECT_DIR$/WifiCaps/dbConfig.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="16" />
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -1127,8 +1029,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WifiCaps/logs/info.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6443149">
+        <state vertical-scroll-proportion="0.39650145">
           <caret line="13" column="71" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WifiCaps/Logger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16088328">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
       </provider>
