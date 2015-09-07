@@ -16,25 +16,24 @@ use WifiCap\Logger;
 class AP
 {
 
-
     protected $_ESSID; // network name
     protected $_BSSID; // mac address
-
-
     protected $_Encryption;
-
     protected $_Password;
-
     protected $_PWR;
     protected $_TransmissionChannel;
     protected $_Frequency;
-
     protected $_Latitude;
     protected $_Longitude;
-
     protected $_DateTime;
-
     protected $_ClientList;
+    protected $_manuf;
+    protected $_carrier;
+    protected $_encoding;
+
+    /**
+     * @var MySQLi
+     */
     protected $mysqli;
     /**
      * @var Logger
@@ -58,6 +57,11 @@ class AP
         $this->mysqli = $databaseConnection;
     }
 
+    /**
+     * Search for Essid based on BSSID id
+     * @param $BSSIDId
+     * @return array|int
+     */
     public function getESSIDByBSSIDId($BSSIDId)
     {
         $Query = "SELECT id from aps_name where id_APs=(?)";
@@ -89,6 +93,10 @@ class AP
 
     }
 
+    /**
+     * @param $ESSID
+     * @return array|int
+     */
     public function getESSID($ESSID)
     {
         $Query = "SELECT * from aps_name where Network_Name=(?)";
@@ -119,8 +127,13 @@ class AP
 
     }
 
+    /**
+     * Store AcessPoints
+     * @param $apList
+     */
     function storeAP($apList)
     {
+        //print_r($apList);
         foreach ($apList as $key => $value) {
             $idBSSID = $this->addBSSID($value["AP"]["BSSID"]);
             $idESSID = $this->addSSID($value["AP"]["ESSID"], $idBSSID);
@@ -130,10 +143,18 @@ class AP
                 $value["AP"]["lat"],
                 $value["AP"]["lng"],
                 $value["AP"]["DateTime"],
-                $idESSID);
+                $idESSID,
+                $value["AP"]["manuf"],
+                $value["AP"]["Carrier"],
+                $value["AP"]["Encoding"]
+            );
         }
     }
 
+    /**
+     * @param $BSSID
+     * @return array|int
+     */
     function addBSSID($BSSID)
     {
         $id = $this->getBSSID($BSSID);
@@ -160,6 +181,11 @@ class AP
 
     }
 
+
+    /**
+     * @param $BSSID
+     * @return array|int
+     */
     public function getBSSID($BSSID)
     {
         $Query = "SELECT * from aps where AP_MAC=(?)";
@@ -196,7 +222,7 @@ class AP
      * @param $idBSSID
      * @return array|int
      */
-    function addSSID($SSID, $idBSSID)
+    function addSSID($SSID, $idBSSID = "0")
     {
 
         $Query = "INSERT INTO aps_name(id_APs,Network_Name) values(?,?) on duplicate key update Network_Name=(?)";
@@ -217,15 +243,25 @@ class AP
         }
     }
 
-    function addAPDetails($Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $idESSID)
+    /**
+     * @param $Encryption
+     * @param $TransmissionChannel
+     * @param $Frequency
+     * @param $lat
+     * @param $lng
+     * @param $DateTime
+     * @param $idESSID
+     * @return array|mixed
+     */
+    function addAPDetails($Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $idESSID, $manuf, $Carrier, $Encoding)
     {
 
-        $QUERY = "insert into aps_details(id_APs,Encryption_Type,Transmssion_Channel,Frequency,lat,lng,DateTime) VALUES(?,?,?,?,?,?,?) on duplicate KEY update id_APS=?,Encryption_Type=?";
+        $QUERY = "insert into aps_details(id_APs,Encryption_Type,Transmssion_Channel,Frequency,lat,lng,DateTime,manuf,Carrier,Encoding) VALUES(?,?,?,?,?,?,?,?,?,?) on duplicate KEY update id_APS=?,Encryption_Type=?";
         if ($stmt = $this->mysqli->prepare($QUERY)) {
-            $stmt->bind_param("sssssssss", $idESSID, $Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $idESSID, $Encryption);
+            $stmt->bind_param("ssssssssssss", $idESSID, $Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $manuf, $Carrier, $Encoding, $idESSID, $Encryption);
             if ($stmt->execute()) {
 
-                $this->log->info($this->logPrefix . ": SUCCESSFULLY ADDED " . $Encryption . " | " . $TransmissionChannel . " | " . $Frequency . " | " . $lat . " | " . $lng . " | " . $DateTime . " | " . $idESSID . " to database");
+                $this->log->info($this->logPrefix . ": SUCCESSFULLY ADDED " . $Encryption . " | " . $TransmissionChannel . " | " . $Frequency . " | " . $lat . " | " . $lng . " | " . $DateTime . " | " . $idESSID . " | " . $manuf . " | " . $Carrier . " | " . $Encoding . " to database");
 
                 return array("Status" => 1, "SUCCESS" => 1);
             } else {
@@ -240,6 +276,10 @@ class AP
 
     }
 
+    /**
+     * @param $Encryption
+     * @return array|string
+     */
     public function searchByEncryption($Encryption)
     {
 
@@ -263,8 +303,9 @@ class AP
                     ++$i;
                 }
                 $row = array_filter($row);
-                return json_encode($row);
                 $stmt->close();
+                return json_encode($row);
+
             } else {
                 $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
                 return array("Status" => "ERROR");
@@ -275,8 +316,6 @@ class AP
         }
 
     }
-
-
 
 
 }
