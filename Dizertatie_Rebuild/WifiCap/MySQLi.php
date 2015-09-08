@@ -30,7 +30,8 @@ class MySQLi
      */
     public function __construct($_error, $_log)
     {
-        require_once "dbConfig.php";
+        $config = require_once "dbConfig.php";
+
         $this->_host = DB_HOST;
         $this->_user = DB_USER;
         $this->_password = DB_PASS;

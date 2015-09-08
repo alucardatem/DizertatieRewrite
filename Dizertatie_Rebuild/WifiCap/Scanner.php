@@ -85,6 +85,7 @@ class Scanner
                 $wifi["AP"]["lat"] = "";
                 $wifi["AP"]["lng"] = "";
                 $wifi["Client"] = array();
+
                 foreach ($network->{'wireless-client'} as $client) {
                     $wifi["Client"]["BSSID"] = (string)$network->BSSID;
                     $wifi["Client"]["clientmac"][] = (string)$client->{"client-mac"};
@@ -136,12 +137,12 @@ $ap = new AP($dataBaseConnection->_connection, $LoggerError, $LoggerInfo);
 $client = new Client($ap, $dataBaseConnection->_connection, $LoggerError, $LoggerInfo);
 
 $list = $data->parseXML('captures/');
-$storeAP = $ap->storeAP($list);
-$addClient = $client->addClient($list);
-$searchClient = $client->getClient();
-$addProbes = $client->addClientProbes($list);
+$storeAP = $ap->add($list);
+$addClient = $client->add($list);
+$searchClient = $client->get();
+$addProbes = $client->addProbes($list);
 $NetworkList = $ap->searchNetwork("CODE932_GUEST");
-$addPass = $ap->addPasswordToNetwork($NetworkList, "guest932code");
+$addPass = $ap->updateNetworkPassword($NetworkList, "guest932code");
 
 echo "\n\nCAPTURED LIST:\n";
 print_r($list);

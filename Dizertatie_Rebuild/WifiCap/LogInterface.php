@@ -15,4 +15,6 @@ interface LogInterface
     public function warning($msg);
 
     public function log($msg, $logType);
+
+    public function exception($msg);
 }

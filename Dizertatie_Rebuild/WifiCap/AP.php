@@ -131,13 +131,13 @@ class AP
      * Store AcessPoints
      * @param $apList
      */
-    function storeAP($apList)
+    function add($apList)
     {
         //print_r($apList);
         foreach ($apList as $key => $value) {
             $idBSSID = $this->addBSSID($value["AP"]["BSSID"]);
             $idESSID = $this->addSSID($value["AP"]["ESSID"], $idBSSID);
-            $this->addAPDetails($value["AP"]["Encryption"],
+            $this->addDetails($value["AP"]["Encryption"],
                 $value["AP"]["TransmissionChannel"],
                 $value["AP"]["Frequency"],
                 $value["AP"]["lat"],
@@ -253,7 +253,7 @@ class AP
      * @param $idESSID
      * @return array|mixed
      */
-    function addAPDetails($Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $idESSID, $manuf, $Carrier, $Encoding)
+    function addDetails($Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $idESSID, $manuf, $Carrier, $Encoding)
     {
 
         $QUERY = "insert into aps_details(id_APs,Encryption_Type,Transmssion_Channel,Frequency,lat,lng,DateTime,manuf,Carrier,Encoding) VALUES(?,?,?,?,?,?,?,?,?,?) on duplicate KEY update id_APS=?,Encryption_Type=?";
@@ -323,7 +323,7 @@ class AP
      * @param $networkPassword
      * @return array|string
      */
-    function addPasswordToNetwork($networkData, $networkPassword)
+    function updateNetworkPassword($networkData, $networkPassword)
     {
         $networkData_array = json_decode($networkData, true);
         // print_R($networkData_array);

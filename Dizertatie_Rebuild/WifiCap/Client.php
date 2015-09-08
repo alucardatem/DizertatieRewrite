@@ -51,8 +51,7 @@ class Client
     }
 
 
-
-    function addClient($List)
+    function add($List)
     {
         foreach ($List as $key => $client_Array) {
             if (count($client_Array["Client"]) == 0) {
@@ -87,14 +86,14 @@ class Client
      * @param $client |string format ==> 00:00:00:00:00:00
      * @return string
      */
-    function getClient($client = "")
+    function get($client = "")
     {
         $extraQuery = "";
         if ($client != "") {
             $extraQuery = " where sniffed_stations.Station_Mac=?";
 
         }
-        $query = "SELECT  `aps_name`.Network_Name,
+        echo $query = "SELECT  `aps_name`.Network_Name,
                           sniffed_stations.Station_Mac,
                           sniffed_stations.lat,
                           sniffed_stations.lng,
@@ -126,7 +125,11 @@ class Client
         }
     }
 
-    function addClientProbes($list)
+    /**
+     * Store the client probes to network name database
+     * @param $list
+     */
+    function addProbes($list)
     {
         foreach ($list as $counter => $lista) {
             if (isset($lista["Client"]["Probe"]))

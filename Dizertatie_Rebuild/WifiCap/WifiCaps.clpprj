@@ -28,11 +28,11 @@
 					<treenode node="AP_NAME;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f20;40;28;40;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="addClient;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;48;2;51;;;;vpos;;v;;r;;d1,49;;b0,0;;mClient_Details;;p">
+				<treenode node="add;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;48;2;51;;;;vpos;;v;;r;;d1,49;;b0,0;;mClient_Details;;p">
 					<treenode node="Client_Details;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f20;48;35;48;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
-				<treenode node="addClientProbes;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;52;2;55;;;;vpos;;v;;r;;d1,53;;b0,0;;mClient_Probes;;p">
+				<treenode node="addProbes;PHP:Function Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f1;52;2;55;;;;vpos;;v;;r;;d1,53;;b0,0;;mClient_Probes;;p">
 					<treenode node="Client_Probes;PHP:Var Name;D:\Gitt\DizertatieRewrite\Dizertatie_Rebuild\WifiCaps\includes\functions.php;f26;52;40;52;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
 					</treenode>
 				</treenode>
