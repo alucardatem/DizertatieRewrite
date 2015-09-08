@@ -54,6 +54,8 @@ class Scanner
         foreach ($scanned_directory as $key => $file) {
 
             $data = simplexml_load_file($CaptureFolder . "/" . $file);
+            $filePrefix = date("YmdHis");
+            // shell_exec("sudo mv {$CaptureFolder}/{$file} {$CaptureFolder}/parsed//{$filePrefix}_{$file}");
 
             $Separated_Data = $this->getWirelessNetworkByType($data);
             //$list = $this->generateList($Separated_Data);
@@ -84,16 +86,8 @@ class Scanner
     }
 
     /**
-     * @param $SearchList
-     */
-    function generateSearchMap($SearchList)
-    {
-
-    }
-
-    /**
      * @param $separated_Data
-     * @param $type | string: infrastructure/probe
+     * @param $type string
      * @return array
      * @internal param $wifi
      * @internal param $list
@@ -185,7 +179,7 @@ class Scanner
     {
         $clientList = array();
         if (!(isset($network->{'wireless-client'}))) {
-            $this->error->error($this->logPrefix . ": There is no client to be added to the list");
+            $this->log->info($this->logPrefix . " There is no client to be added to the list");
             return $clientList;
         }
 

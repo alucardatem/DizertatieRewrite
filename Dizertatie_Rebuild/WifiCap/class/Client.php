@@ -57,7 +57,7 @@ class Client
     {
         foreach ($List as $key => $client_Array) {
             if (count($client_Array["Client"]) == 0) {
-                $this->error->error($this->logPrefix . ": There is no client to be added");
+                $this->log->error($this->logPrefix . " There is no client to be added");
                 continue;
             }
             foreach ($client_Array["Client"] as $clientKey => $ClientData) {
@@ -67,8 +67,8 @@ class Client
                 $query = " INSERT into sniffed_stations(id_Ap,id_Network_Name,Station_Mac,lat,lng,DateFirstSeen,DateLastSeen,clientManuf,carrier,channel,encoding,Station_Power) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
                           on duplicate key update DateLastSeen=(?)";
                 if ($stmt = $this->mysqli->prepare($query)) {
-                    $date = date("Y-m-d H:i:s");
-                    $lastSeenDate = date("Y-m-d H:i:s");
+                    $date = date("Y-m-d");
+                    $lastSeenDate = date("Y-m-d");
                     $stmt->bind_param("sssssssssssss",
                         $idAPs,
                         $IdNetworkName,
@@ -102,15 +102,15 @@ class Client
      * Store the client probes to network name database
      * @param $list
      */
-    private function addProbes($list)
+    public function addProbes($list)
     {
         // print_r($list);
         if (!isset($list["Probe"])) {
-            $this->error->error($this->logPrefix . " there are no probes set on Client");
+            $this->log->error($this->logPrefix . " there are no probes set on Client");
             return false;
         }
         if ($list["Probe"] === "") {
-            $this->error->error($this->logPrefix . " client has no probes");
+            $this->log->error($this->logPrefix . " client has no probes");
             return false;
         }
         foreach ($list["Probe"] as $counter => $probe) {
@@ -128,7 +128,7 @@ class Client
      */
     private function _associateClientWithProbes($APID, $probeID, $clientMac)
     {
-        $date = date("Y-m-d H:i:s");
+        $date = date("Y-m-d");
         $query = "INSERT into sniffed_stations ( id_Ap,
                                                   id_Network_Name,
                                                   Station_Mac,
