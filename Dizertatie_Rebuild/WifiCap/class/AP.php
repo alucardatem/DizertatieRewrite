@@ -8,7 +8,6 @@
 
 namespace WifiCap;
 require_once "Logger.php";
-
 use WifiCap\Logger;
 
 
