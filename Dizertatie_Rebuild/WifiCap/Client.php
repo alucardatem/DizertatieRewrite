@@ -50,35 +50,119 @@ class Client
         $this->mysqli = $databaseConnection;
     }
 
-
-    function add($List)
+    /**
+     * @param $List
+     */
+    public function add($List)
     {
         foreach ($List as $key => $client_Array) {
             if (count($client_Array["Client"]) == 0) {
-                $this->log->error($this->logPrefix . ": There is no client to be added");
+                $this->error->error($this->logPrefix . ": There is no client to be added");
                 continue;
             }
-            $idAP = $this->AP->getBSSID($client_Array["Client"]["BSSID"]);
-            $idAPs = $idAP["Data"][0]["id"];
-            $IdNetworkName = $this->AP->getESSIDByBSSIDId($idAP["Data"][0]["id"]);
-            $client_Array["Client"]["lng"];
-            foreach ($client_Array["Client"]["clientmac"] as $counter => $TerminalMac) {
+            foreach ($client_Array["Client"] as $clientKey => $ClientData) {
+                $idAP = $this->AP->getBSSID($ClientData["BSSID"]);
+                $idAPs = $idAP["Data"][0]["id"];
+                $IdNetworkName = $this->AP->getESSIDByBSSIDId($idAPs);
                 $query = " INSERT into sniffed_stations(id_Ap,id_Network_Name,Station_Mac,lat,lng,DateFirstSeen,DateLastSeen,clientManuf,carrier,channel,encoding,Station_Power) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
                           on duplicate key update DateLastSeen=(?)";
                 if ($stmt = $this->mysqli->prepare($query)) {
                     $date = date("Y-m-d H:i:s");
                     $lastSeenDate = date("Y-m-d H:i:s");
-                    $stmt->bind_param("sssssssssssss", $idAPs, $IdNetworkName, $TerminalMac, $client_Array["Client"]["lat"], $client_Array["Client"]["lng"], $date, $lastSeenDate, $client_Array["Client"]["clientManuf"], $client_Array["Client"]["carrier"], $client_Array["Client"]["channel"], $client_Array["Client"]["encoding"], $client_Array["Client"]["StationPower"], $lastSeenDate);
+                    $stmt->bind_param("sssssssssssss",
+                        $idAPs,
+                        $IdNetworkName,
+                        $ClientData["clientmac"],
+                        $ClientData["lat"],
+                        $ClientData["lng"],
+                        $date,
+                        $lastSeenDate,
+                        $ClientData["client-manuf"],
+                        $ClientData["carrier"],
+                        $ClientData["channel"],
+                        $ClientData["encoding"],
+                        $ClientData["StationPower"],
+                        $lastSeenDate);
                     if ($stmt->execute()) {
-                        $this->log->info($this->logPrefix . "SUCCESS INSERT " . $TerminalMac . " | " . $idAPs . " | " . $IdNetworkName . " | " . $date . " | " . $lastSeenDate);
+
+                        $id = $this->addProbes($ClientData);
+
+                        $APID = $this->AP->getIdAPSByESSIDId($id);
+                        $this->_associateClientWithProbes($APID, $id, $ClientData["clientmac"]);
+                        $this->log->info($this->logPrefix . "SUCCESS INSERT " . $ClientData["clientmac"] . " | " . $idAPs . " | " . $IdNetworkName . " | " . $date . " | " . $lastSeenDate);
                     }
+
                 }
+
+            }
+        }
+    }
+
+    /**
+     * Store the client probes to network name database
+     * @param $list
+     */
+    private function addProbes($list)
+    {
+        // print_r($list);
+        if (!isset($list["Probe"])) {
+            $this->error->error($this->logPrefix . " there are no probes set on Client");
+            return false;
+        }
+        if ($list["Probe"] === "") {
+            $this->error->error($this->logPrefix . " client has no probes");
+            return false;
+        }
+        foreach ($list["Probe"] as $counter => $probe) {
+            $this->log->info($this->logPrefix . "ADDED " . $probe . " to " . $list["clientmac"]);
+            $data = $this->AP->addSSID($probe);
+            //echo $list["clientmac"]." | ".$probe." | ".$data."\n";
+            return $data;
+        }
+    }
+
+    /**
+     * @param $APID
+     * @param $probeID
+     * @param $clientMac
+     */
+    private function _associateClientWithProbes($APID, $probeID, $clientMac)
+    {
+        $date = date("Y-m-d H:i:s");
+        $query = "INSERT into sniffed_stations ( id_Ap,
+                                                  id_Network_Name,
+                                                  Station_Mac,
+                                                  lat,
+                                                  lng,
+                                                  DateFirstSeen,
+                                                  DateLastSeen,
+                                                  clientManuf,
+                                                  carrier,
+                                                  channel,
+                                                  encoding,
+                                                  Station_Power)
+                  SELECT  {$APID},
+                          {$probeID},
+                          Station_Mac,
+                          lat,
+                          lng,
+                          DateFirstSeen,
+                          DateLastSeen,
+                          clientManuf,
+                          carrier,
+                          channel,
+                          encoding,
+                          Station_Power
+                  from sniffed_stations where Station_Mac=?
+                  on duplicate key update DateLastSeen=(?)";
+        if ($stmt = $this->mysqli->prepare($query)) {
+            $stmt->bind_param("ss", $clientMac, $date);
+            if ($stmt->execute()) {
+                $this->log->info($this->logPrefix . "SUCCESSFULLY assigned client to probe");
             }
         }
 
-
     }
-
 
     /**
      * @val Client
@@ -93,7 +177,7 @@ class Client
             $extraQuery = " where sniffed_stations.Station_Mac=?";
 
         }
-        echo $query = "SELECT  `aps_name`.Network_Name,
+        $query = "SELECT  `aps_name`.Network_Name,
                           sniffed_stations.Station_Mac,
                           sniffed_stations.lat,
                           sniffed_stations.lng,
@@ -121,25 +205,6 @@ class Client
                 $row = array_filter($row);
                 $stmt->close();
                 return json_encode($row);
-            }
-        }
-    }
-
-    /**
-     * Store the client probes to network name database
-     * @param $list
-     */
-    function addProbes($list)
-    {
-        foreach ($list as $counter => $lista) {
-            if (!isset($lista["Client"]["Probe"])) {
-                continue;
-            }
-            if ($lista["Client"]["Probe"] === "") {
-                continue;
-            }
-            foreach ($lista["Client"]["Probe"] as $key => $value) {
-                $this->AP->addSSID($value);
             }
         }
     }

@@ -21,8 +21,13 @@ class Scanner
 {
     protected $_APList;
     protected $_ClientList;
+
+    /**
+     * @var Logger
+     */
     private $error;
     private $log;
+    private $logPrefix;
 
     /**
      * Scanner constructor.
@@ -33,7 +38,9 @@ class Scanner
     {
         $this->error = $error;
         $this->log = $log;
+        $this->logPrefix = "[" . __CLASS__ . "][" . __FUNCTION__ . "]";
     }
+
 
     /**
      * @param $CaptureFolder
@@ -48,28 +55,83 @@ class Scanner
 
             $data = simplexml_load_file($CaptureFolder . "/" . $file);
 
-            foreach ($data->{'wireless-network'} as $number => $network) {
-
-                $essid = $this->_extractESSID($network);
-
-                $wifi["AP"]["BSSID"] = (string)$network->BSSID;
-                $wifi["AP"]["ESSID"] = (string)$essid;
-                $wifi["AP"]["manuf"] = (string)$network->manuf;
-                $wifi["AP"]["Carrier"] = (string)$network->carrier;
-                $wifi["AP"]["Encoding"] = (string)$network->encoding;
-                $wifi["AP"]["TransmissionChannel"] = (string)$network->channel;
-                $wifi["AP"]["Frequency"] = (string)$network->freqmhz;
-                $wifi["AP"]["DateTime"] = date('d-m-Y H:i:s');
-                $wifi["AP"]["lat"] = "";
-                $wifi["AP"]["lng"] = "";
-
-                $wifi["AP"]["Encryption"] = $this->_extractEncryption($network);
-                $wifi["Client"] = $this->_extractClientList($network);
-
-                $list[] = $wifi;
-            }
-            return $list;
+            $Separated_Data = $this->getWirelessNetworkByType($data);
+            //$list = $this->generateList($Separated_Data);
+            return $Separated_Data;
         }
+    }
+
+
+    private function getWirelessNetworkByType($xmlData)
+    {
+
+        $ReturnData["probe"] = array();
+        $ReturnData["infrastructure"] = array();
+        foreach ($xmlData as $key => $network) {
+            $type = $network->attributes()->{'type'};
+            if ($type == "infrastructure") {
+                $ReturnData["infrastructure"][] = $network;
+            }
+            if ($type == "probe") {
+                $ReturnData["probe"][] = $network;
+            }
+
+
+        }
+        return $ReturnData;
+
+
+    }
+
+    /**
+     * @param $SearchList
+     */
+    function generateSearchMap($SearchList)
+    {
+
+    }
+
+    /**
+     * @param $separated_Data
+     * @param $type | string: infrastructure/probe
+     * @return array
+     * @internal param $wifi
+     * @internal param $list
+     */
+    public function generateList($separated_Data, $type = "infrastructure")
+    {
+        $acceptedType = array("infrastructure", "probe");
+        $temp_type = $type;
+        if (!in_array($temp_type, $acceptedType)) {
+            $type = "infrastructure";
+            return json_encode(array("Status" => 0, "ERROR" => "{$temp_type} not found, using {$type}"));
+        }
+        foreach ($separated_Data[$type] as $network) {
+            //print_r($network);
+
+            $essid = $this->_extractESSID($network);
+
+            $wifi["AP"]["BSSID"] = (string)$network->BSSID;
+            $wifi["AP"]["ESSID"] = (string)$essid;
+            $wifi["AP"]["manuf"] = (string)$network->manuf;
+            $wifi["AP"]["Carrier"] = (string)$network->carrier;
+            $wifi["AP"]["Encoding"] = (string)$network->encoding;
+            $wifi["AP"]["TransmissionChannel"] = (string)$network->channel;
+            $wifi["AP"]["Frequency"] = (string)$network->freqmhz;
+            $wifi["AP"]["DateTime"] = date('d-m-Y H:i:s');
+            $wifi["AP"]["lat"] = "";
+            $wifi["AP"]["lng"] = "";
+            if ($this->_extractEncryption($network) != "") {
+                $wifi["AP"]["Encryption"] = $this->_extractEncryption($network);
+            }
+
+            //continue;
+            $wifi["Client"] = $this->_extractClientList($network);
+            $list[] = $wifi;
+
+
+        }
+        return $list;
     }
 
     /**
@@ -92,19 +154,20 @@ class Scanner
      */
     private function _extractEncryption($network)
     {
+
         if (!isset($network->SSID)) {
-            $setEncryption = "OPN";
+            $setEncryption = "";
             return $setEncryption;
         }
         if ((string)$network->SSID->encryption === "None" || (string)$network->SSID->encryption === "" OR (string)$network->SSID->encryption === " ") {
-            $setEncryption = "OPN";
+            $setEncryption = "";
             return $setEncryption;
         }
         $encryption = "";
-        foreach ($network->SSID as $Enc) {
-            foreach ($Enc->encryption as $counterEnc => $EncValue) {
-                $encryption .= $EncValue . " ";
-            }
+
+
+        foreach ($network->SSID->encryption as $counterEnc => $EncValue) {
+            $encryption .= $EncValue . " ";
         }
         $encryption = substr($encryption, 0, -1);
         $setEncryption = $encryption;
@@ -120,73 +183,38 @@ class Scanner
      */
     private function _extractClientList($network)
     {
-        foreach ($network->{'wireless-client'} as $client) {
-            $wirelessClient["BSSID"] = (string)$network->BSSID;
-            $wirelessClient["clientmac"][] = (string)$client->{"client-mac"};
-            $wirelessClient["clientManuf"] = (string)$client->{"client-manuf"};
-            $wirelessClient["channel"] = (string)$client->{"channel"};
-            $wirelessClient["carrier"] = (string)$client->{"carrier"};
-            $wirelessClient["encoding"] = (string)$client->{"encoding"};
-            $wirelessClient["Probe"] = "";
-            foreach ($client->SSID as $Probe) {
-
-                if (isset($Probe->ssid)) {
-                    $wirelessClient["Probe"][] = (string)$Probe->ssid;
-                }
-            }
-            $wirelessClient["StationPower"] = (string)$client->{"snr-info"}->last_signal_dbm;
-            $wirelessClient["lat"] = "";
-            $wirelessClient["lng"] = "";
+        $clientList = array();
+        if (!(isset($network->{'wireless-client'}))) {
+            $this->error->error($this->logPrefix . ": There is no client to be added to the list");
+            return $clientList;
         }
-        return $wirelessClient;
-    }
 
-    /**
-     * @param $SearchList
-     */
-    function generateSearchMap($SearchList)
-    {
+        foreach ($network->{"wireless-client"} as $client) {
+            $wirelessClient["BSSID"] = (string)$network->BSSID;
+            $wirelessClient["clientmac"] = (string)$client->{'client-mac'};
+            $wirelessClient["client-manuf"] = (string)$client->{'client-manuf'};
+            $wirelessClient["channel"] = (string)$client->{'channel'};
+            $wirelessClient["carrier"] = (string)$client->{'carrier'};
+            $wirelessClient["encoding"] = (string)$client->{'encoding'};
+            $wirelessClient["StationPower"] = (string)$client->{"snr-info"}->last_signal_dbm;
+            $wirelessClient["lat"] = (string)$client->{"gps-info"}->{'min-lat'};
+            $wirelessClient["lng"] = (string)$client->{"gps-info"}->{'min-lon'};
+            if (!isset($client->SSID)) {
+                $wirelessClient["Probe"] = "";
+            }
+            foreach ($client->SSID as $ssidKey => $SSID) {
+                if (!isset($SSID->ssid)) {
+                    continue;
+                }
+                $wirelessClient["Probe"][] = (string)$SSID->ssid;
+            }
 
+            $clientList[] = $wirelessClient;
+
+
+        }
+        return $clientList;
     }
 
 
 }
-
-
-$LogInfoFile = "./logs/info.log";
-$LogErrorFile = "./logs/error.log";
-
-$LoggerInfo = new Logger($LogInfoFile);
-$LoggerError = new Logger($LogErrorFile);
-
-$dataBaseConnection = new MySQLi($LoggerError, $LoggerInfo);
-$data = new Scanner($LoggerError, $LoggerInfo);
-
-
-$ap = new AP($dataBaseConnection->_connection, $LoggerError, $LoggerInfo);
-$client = new Client($ap, $dataBaseConnection->_connection, $LoggerError, $LoggerInfo);
-
-$list = $data->parseXML('captures/');
-$storeAP = $ap->add($list);
-$addClient = $client->add($list);
-$searchClient = $client->get();
-$addProbes = $client->addProbes($list);
-$NetworkList = $ap->searchNetwork("CODE932_GUEST");
-$addPass = $ap->updateNetworkPassword($NetworkList, "guest932code");
-
-echo "\n\nCAPTURED LIST:\n";
-print_r($list);
-echo "\n\nADD AN AP:\n";
-print_r($storeAP);
-echo "\n\nADD A CLIENT\n";
-print_r($addClient);
-echo "\n\nSEARCH FOR A CLIENT\n";
-print_r($searchClient);
-echo "\n\nSTORE CLIENT PROBES\n";
-print_r($addProbes);
-echo "\n\nSEARCH 4 NETWORK\n";
-print_r($NetworkList);
-echo "\n\nADD PASSWORD TO NETWORK\n";
-print_r($addPass);
-echo "\n\n";
-

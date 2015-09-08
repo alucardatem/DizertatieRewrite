@@ -83,47 +83,13 @@ class AP
                     return 0;
                 }
             } else {
-                $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
+                $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
                 return array("Status" => "ERROR");
             }
         } else {
-            $this->log->error($this->logPrefix . ": ERROR PREPARING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+            $this->error->error($this->logPrefix . ": ERROR PREPARING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
             return array("Status" => "ERROR");
         }
-
-    }
-
-    /**
-     * @param $ESSID
-     * @return array|int
-     */
-    public function getESSID($ESSID)
-    {
-        $Query = "SELECT * from aps_name where Network_Name=(?)";
-        if ($stmt = $this->mysqli->prepare($Query)) {
-            $stmt->bind_param("s", $ESSID);
-            if ($stmt->execute()) {
-
-                $result = $stmt->get_result();
-                $i = 0;
-                while ($row[$i] = $result->fetch_assoc()) {
-                    ++$i;
-                }
-                $row = array_filter($row);
-                $stmt->close();
-
-                if (count($row) > 0) {
-                    return array("Status" => 1, "Data" => $row);
-                } else {
-                    return 0;
-                }
-            }
-            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
-            return array("Status" => "ERROR");
-
-        }
-        $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
-        return array("Status" => "ERROR");
 
     }
 
@@ -134,16 +100,35 @@ class AP
     function add($apList)
     {
         //print_r($apList);
-        foreach ($apList as $key => $value) {
+        foreach ($apList as $value) {
+
+            /* echo
+                 $value["AP"]["ESSID"]." | ".
+                 $value["AP"]["BSSID"]." | ".
+                 $value["AP"]["Encryption"]." | ".
+                 $value["AP"]["TransmissionChannel"]." | ".
+                 $value["AP"]["Frequency"]." | ".
+                 $value["AP"]["lat"]." | ".
+                 $value["AP"]["lng"]." | ".
+                 $value["AP"]["DateTime"]." | ".
+                 $value["AP"]["manuf"]." | ".
+                 $value["AP"]["Carrier"]." | ".
+                 $value["AP"]["Encoding"]."\n";*/
+            if (!isset($value["AP"]["Encryption"])) {
+                continue;
+            }
+
             $idBSSID = $this->addBSSID($value["AP"]["BSSID"]);
             $idESSID = $this->addSSID($value["AP"]["ESSID"], $idBSSID);
+
+
             $this->addDetails($value["AP"]["Encryption"],
                 $value["AP"]["TransmissionChannel"],
                 $value["AP"]["Frequency"],
                 $value["AP"]["lat"],
                 $value["AP"]["lng"],
                 $value["AP"]["DateTime"],
-                $idESSID,
+                $idBSSID,
                 $value["AP"]["manuf"],
                 $value["AP"]["Carrier"],
                 $value["AP"]["Encoding"]
@@ -173,14 +158,13 @@ class AP
                 $this->log->info($this->logPrefix . ": SUCCESSFULLY ADDED " . $BSSID . " to database");
                 return $id;
             }
-            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
+            $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
             return array("Status" => "ERROR");
         }
-        $this->log->info($this->logPrefix . ": ERROR PREPARING STATEMENT: " . $stmt->error);
+        $this->error->info($this->logPrefix . ": ERROR PREPARING STATEMENT: " . $stmt->error);
         return array("Status" => "ERROR");
 
     }
-
 
     /**
      * @param $BSSID
@@ -208,11 +192,11 @@ class AP
                     return 0;
                 }
             } else {
-                $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+                $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
                 return array("Status" => "ERROR");
             }
         } else {
-            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+            $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
             return array("Status" => "ERROR");
         }
     }
@@ -224,7 +208,10 @@ class AP
      */
     function addSSID($SSID, $idBSSID = "0")
     {
-
+        $Check = $this->getESSID($SSID);
+        if (isset($Check["Data"][0]["Network_Name"]) AND $Check["Data"][0]["Network_Name"] == $SSID) {
+            return $Check["Data"][0]["id"];
+        }
         $Query = "INSERT INTO aps_name(id_APs,Network_Name) values(?,?) on duplicate key update Network_Name=(?)";
         if ($stmt = $this->mysqli->prepare($Query)) {
             $stmt->bind_param("sss", $idBSSID, $SSID, $SSID);
@@ -234,13 +221,47 @@ class AP
                 $this->log->info($this->logPrefix . ": SUCCESSFULLY ADDED " . $SSID . " to database");
                 return $id;
             } else {
-                $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__, "error");
+                $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__, "error");
                 return array("Status" => "ERROR");
             }
         } else {
-            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__, "error");
+            $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__, "error");
             return array("Status" => "ERROR");
         }
+    }
+
+    /**
+     * @param $ESSID
+     * @return array|int
+     */
+    public function getESSID($ESSID)
+    {
+        $Query = "SELECT * from aps_name where Network_Name=(?)";
+        if ($stmt = $this->mysqli->prepare($Query)) {
+            $stmt->bind_param("s", $ESSID);
+            if ($stmt->execute()) {
+
+                $result = $stmt->get_result();
+                $i = 0;
+                while ($row[$i] = $result->fetch_assoc()) {
+                    ++$i;
+                }
+                $row = array_filter($row);
+                $stmt->close();
+
+                if (count($row) > 0) {
+                    return array("Status" => 1, "Data" => $row);
+                } else {
+                    return 0;
+                }
+            }
+            $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
+            return array("Status" => "ERROR");
+
+        }
+        $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error);
+        return array("Status" => "ERROR");
+
     }
 
     /**
@@ -254,10 +275,11 @@ class AP
      * @return array|mixed
      */
     //TODO: make array param and validate the keys
+
     function addDetails($Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $idESSID, $manuf, $Carrier, $Encoding)
     {
 
-        $QUERY = "insert into aps_details(id_APs,Encryption_Type,Transmssion_Channel,Frequency,lat,lng,DateTime,manuf,Carrier,Encoding) VALUES(?,?,?,?,?,?,?,?,?,?) on duplicate KEY update id_APS=?,Encryption_Type=?";
+        $QUERY = "insert into aps_details(id_APs,Encryption_Type,Transmssion_Channel,Frequency,lat,lng,DateTime,manuf,Carrier,Encoding) VALUES(?,?,?,?,?,?,?,?,?,?) on duplicate KEY update id_APs=?,Encryption_Type=?";
         if ($stmt = $this->mysqli->prepare($QUERY)) {
             $stmt->bind_param("ssssssssssss", $idESSID, $Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $manuf, $Carrier, $Encoding, $idESSID, $Encryption);
             if ($stmt->execute()) {
@@ -266,11 +288,11 @@ class AP
 
                 return array("Status" => 1, "SUCCESS" => 1);
             } else {
-                $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+                $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
                 return array("Status" => "ERROR");
             }
         } else {
-            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+            $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
             return array("Status" => "ERROR");
         }
 
@@ -308,11 +330,11 @@ class AP
                 return json_encode($row);
 
             } else {
-                $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+                $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
                 return array("Status" => "ERROR");
             }
         } else {
-            $this->log->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
+            $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
             return array("Status" => "ERROR");
         }
 
@@ -376,6 +398,33 @@ class AP
                 $stmt->close();
                 return json_encode($row);
             }
+
+        }
+    }
+
+    function getIdAPSByESSIDId($id)
+    {
+        $query = "SELECT id_APs from aps_name where id=?";
+        if ($stmt = $this->mysqli->prepare($query)) {
+            $stmt->bind_param("s", $id);
+            if ($stmt->execute()) {
+                $result = $stmt->get_result();
+                $i = 0;
+                while ($row[$i] = $result->fetch_assoc()) {
+                    ++$i;
+                }
+                $row = array_filter($row);
+                $stmt->close();
+                if (count($row) == 0) {
+                    return 0;
+                }
+                return $row[0]["id_APs"];
+            } else {
+                $this->error->error($this->logPrefix . "ERROR EXECUTING " . $query);
+            }
+
+        } else {
+            $this->error->error($this->logPrefix . "ERROR PREPARING STATEMENT FOR  " . __FUNCTION__);
 
         }
     }
