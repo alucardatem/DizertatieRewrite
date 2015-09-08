@@ -132,11 +132,15 @@ class Client
     function addProbes($list)
     {
         foreach ($list as $counter => $lista) {
-            if (isset($lista["Client"]["Probe"]))
-                if ($lista["Client"]["Probe"] != "")
-                    foreach ($lista["Client"]["Probe"] as $key => $value) {
-                        $this->AP->addSSID($value);
-                    }
+            if (!isset($lista["Client"]["Probe"])) {
+                continue;
+            }
+            if ($lista["Client"]["Probe"] === "") {
+                continue;
+            }
+            foreach ($lista["Client"]["Probe"] as $key => $value) {
+                $this->AP->addSSID($value);
+            }
         }
     }
 

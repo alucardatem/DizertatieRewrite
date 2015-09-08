@@ -253,6 +253,7 @@ class AP
      * @param $idESSID
      * @return array|mixed
      */
+    //TODO: make array param and validate the keys
     function addDetails($Encryption, $TransmissionChannel, $Frequency, $lat, $lng, $DateTime, $idESSID, $manuf, $Carrier, $Encoding)
     {
 
