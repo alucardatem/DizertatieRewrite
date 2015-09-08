@@ -41,7 +41,6 @@ class Scanner
      */
     function parseXML($CaptureFolder)
     {
-
         $list = array();
         $scanned_directory = array_diff(scandir($CaptureFolder), array('..', '.'));
         $scanned_directory = array_values($scanned_directory);
@@ -137,12 +136,26 @@ $ap = new AP($dataBaseConnection->_connection, $LoggerError, $LoggerInfo);
 $client = new Client($ap, $dataBaseConnection->_connection, $LoggerError, $LoggerInfo);
 
 $list = $data->parseXML('captures/');
+$storeAP = $ap->storeAP($list);
+$addClient = $client->addClient($list);
+$searchClient = $client->getClient();
+$addProbes = $client->addClientProbes($list);
+$NetworkList = $ap->searchNetwork("CODE932_GUEST");
+$addPass = $ap->addPasswordToNetwork($NetworkList, "guest932code");
 
-
-$ap->storeAP($list);
-$client->addClient($list);
-$searchClient = $client->getClient("F8:2F:A8:B2:0F:F9");
-//print_r($searchClient);
-
-$client->addClientProbes($list);
+echo "\n\nCAPTURED LIST:\n";
+print_r($list);
+echo "\n\nADD AN AP:\n";
+print_r($storeAP);
+echo "\n\nADD A CLIENT\n";
+print_r($addClient);
+echo "\n\nSEARCH FOR A CLIENT\n";
+print_r($searchClient);
+echo "\n\nSTORE CLIENT PROBES\n";
+print_r($addProbes);
+echo "\n\nSEARCH 4 NETWORK\n";
+print_r($NetworkList);
+echo "\n\nADD PASSWORD TO NETWORK\n";
+print_r($addPass);
+echo "\n\n";
 

@@ -317,5 +317,66 @@ class AP
 
     }
 
+    /**
+     * Add a password to a network based on the search result from searchNetwork
+     * @param $networkData
+     * @param $networkPassword
+     * @return array|string
+     */
+    function addPasswordToNetwork($networkData, $networkPassword)
+    {
+        $networkData_array = json_decode($networkData, true);
+        // print_R($networkData_array);
+        foreach ($networkData_array as $networkCounter => $network) {
+            //print_r($network);
+            $query = "UPDATE aps_details set Password=? where id=?";
+            if ($stmt = $this->mysqli->prepare($query)) {
+                $stmt->bind_param("ss", $networkPassword, $network["id"]);
+                if ($stmt->execute()) {
+                    return $this->searchNetwork($network["Network_Name"]);
+                }
+            }
+        }
+    }
+
+    /**
+     * @param string $networkName
+     * @return array|string
+     */
+    public function searchNetwork($networkName = "")
+    {
+        $extraQuery = "";
+        if ($networkName != "") {
+            $extraQuery = " WHERE `aps_name`.Network_Name=?";
+        }
+        $QUERY = "SELECT  `aps_details`.id,
+                          `aps_name`.Network_Name,
+                          `aps_details`.Encryption_Type,
+                          `aps_details`.Transmssion_Channel,
+                          `aps_details`.manuf,
+                          `aps_details`.Carrier,
+                          `aps_details`.Encoding,
+                          `aps_details`.Password,
+                          `aps_details`.HandShake
+                  FROM `aps_details`
+                  INNER JOIN aps_name as aps_name
+                  ON aps_name.id_APs=aps_details.id_APs" . $extraQuery;
+        if ($stmt = $this->mysqli->prepare($QUERY)) {
+            if ($networkName != "") {
+                $stmt->bind_param("s", $networkName);
+            }
+            if ($stmt->execute()) {
+                $result = $stmt->get_result();
+                $i = 0;
+                while ($row[$i] = $result->fetch_assoc()) {
+                    ++$i;
+                }
+                $row = array_filter($row);
+                $stmt->close();
+                return json_encode($row);
+            }
+
+        }
+    }
 
 }

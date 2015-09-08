@@ -87,8 +87,13 @@ class Client
      * @param $client |string format ==> 00:00:00:00:00:00
      * @return string
      */
-    function getClient($client)
+    function getClient($client = "")
     {
+        $extraQuery = "";
+        if ($client != "") {
+            $extraQuery = " where sniffed_stations.Station_Mac=?";
+
+        }
         $query = "SELECT  `aps_name`.Network_Name,
                           sniffed_stations.Station_Mac,
                           sniffed_stations.lat,
@@ -102,11 +107,12 @@ class Client
                           sniffed_stations.DateLastSeen
 	            FROM sniffed_stations
 	            INNER JOIN aps_name as aps_name on
-	                    sniffed_stations.id_Network_Name = aps_name.id_APs
-
-	            where sniffed_stations.Station_Mac=?";
+	                    sniffed_stations.id_Network_Name = aps_name.id_APs" . $extraQuery;
         if ($stmt = $this->mysqli->prepare($query)) {
-            $stmt->bind_param("s", $client);
+            if ($client != "") {
+                $stmt->bind_param("s", $client);
+            }
+
             if ($stmt->execute()) {
                 $result = $stmt->get_result();
                 $i = 0;
@@ -120,23 +126,15 @@ class Client
         }
     }
 
-
-    function getAllClients()
-    {
-
-    }
-
     function addClientProbes($list)
     {
         foreach ($list as $counter => $lista) {
-
             if (isset($lista["Client"]["Probe"]))
                 if ($lista["Client"]["Probe"] != "")
                     foreach ($lista["Client"]["Probe"] as $key => $value) {
                         $this->AP->addSSID($value);
                     }
         }
-
     }
 
 

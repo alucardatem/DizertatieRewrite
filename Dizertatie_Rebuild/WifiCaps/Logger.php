@@ -34,7 +34,7 @@ class Logger implements LogInterface
      */
     public function log($log, $logType = "info")
     {
-        $logTypeArray = array("info", "warning", "error");
+        $logTypeArray = array("info", "warning", "error", "exception");
         if (!in_array($logType, $logTypeArray)) {
             $logType = "info";
         }
@@ -58,6 +58,11 @@ class Logger implements LogInterface
     public function warning($msg)
     {
         $this->log($msg, "warning");
+    }
+
+    public function exception($msg)
+    {
+        $this->log($msg, "exception");
     }
 
 
