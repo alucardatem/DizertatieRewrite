@@ -11,20 +11,20 @@ spl_autoload_register(function ($class) {
     $prefix = 'WifiCap\\';
 
     // base directory for the namespace prefix
-    $base_dir = __DIR__ . '/class/';
+    $base_dir = __DIR__ . '/core/';
 
-    // does the class use the namespace prefix?
+    // does the core use the namespace prefix?
     $len = strlen($prefix);
     if (strncmp($prefix, $class, $len) !== 0) {
         // no, move to the next registered autoloader
         return;
     }
 
-    // get the relative class name
+    // get the relative core name
     $relative_class = substr($class, $len);
 
     // replace the namespace prefix with the base directory, replace namespace
-    // separators with directory separators in the relative class name, append
+    // separators with directory separators in the relative core name, append
     // with .php
     $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
 
@@ -34,11 +34,7 @@ spl_autoload_register(function ($class) {
     }
 });
 
-use WifiCap\Logger;
-use WifiCap\MySQLi;
-use WifiCap\Scanner;
-use WifiCap\Client;
-use WifiCap\AP;
+
 
 $LogInfoFile = "./logs/info.log";
 $LogErrorFile = "./logs/error.log";
@@ -71,7 +67,7 @@ $addProbes = $client->addProbes($list);
 $NetworkList = $ap->searchNetwork("CODE932_GUEST");
 $addPass = $ap->updateNetworkPassword($NetworkList, "guest932code");
 
-echo "\n\n**************\n\n";
+/*echo "\n\n**************\n\n";
 print_r($storeAPInfrastructure);
 echo "\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n";
 print_r($addInfrastructureClient);
@@ -89,4 +85,4 @@ echo "\n\n**************\n\n";
 print_r($NetworkList);
 echo "\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n";
 print_r($addPass);
-echo "\n\n**************\n\n";
+echo "\n\n**************\n\n";*/

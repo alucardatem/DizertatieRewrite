@@ -53,9 +53,10 @@ class Scanner
         $scanned_directory = array_values($scanned_directory);
         foreach ($scanned_directory as $key => $file) {
 
+            echo $file;
             $data = simplexml_load_file($CaptureFolder . "/" . $file);
-            $filePrefix = date("YmdHis");
-            // shell_exec("sudo mv {$CaptureFolder}/{$file} {$CaptureFolder}/parsed//{$filePrefix}_{$file}");
+            // $filePrefix = date("YmdHis");
+            // echo shell_exec("move ./{$CaptureFolder}/\{$file}  ./{$CaptureFolder}/\parsed");
 
             $Separated_Data = $this->getWirelessNetworkByType($data);
             //$list = $this->generateList($Separated_Data);
