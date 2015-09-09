@@ -52,21 +52,34 @@ $client = new \WifiCap\Client($ap, $dataBaseConnection->_connection, $LoggerErro
 
 $list = $data->parseXML('captures/');
 
-$InfrastructureList = $data->generateList($list);
-$ProbeList = $data->generateList($list, "probe");
+if ($list != false) {
+    $InfrastructureList = $data->generateList($list);
+    $ProbeList = $data->generateList($list, "probe");
+    $storeAPInfrastructure = $ap->add($InfrastructureList);
+    $storeAPProbes = $ap->add($ProbeList);
 
+    $addInfrastructureClient = $client->add($InfrastructureList);
+    $addProbesClient = $client->add($ProbeList);
+    $addProbes = $client->addProbes($list);
 
-$storeAPInfrastructure = $ap->add($InfrastructureList);
-$storeAPProbes = $ap->add($ProbeList);
-
-$addInfrastructureClient = $client->add($InfrastructureList);
-$addProbesClient = $client->add($ProbeList);
+}
 
 $searchClient = $client->get();
-$addProbes = $client->addProbes($list);
-$NetworkList = $ap->searchNetwork("CODE932_GUEST");
-$addPass = $ap->updateNetworkPassword($NetworkList, "guest932code");
 
+
+$NetworkList = $ap->search("CODE932_GUEST");
+$APList = $ap->search("WPA");
+
+//$addPass = $ap->updateNetworkPassword($NetworkList, "guest932code");
+
+echo "\n\n+++++++++++++++++++++++++++SEARCH CLIENT\n\n";
+print_r($searchClient);
+echo "\n\n+++++++++++++++++++++++++++SEARCH NETWORK\n\n";
+print_r($NetworkList);
+echo "\n\n+++++++++++++++++++++++++++SEARCH AP\n\n";
+print_r($APList);
+echo "\n\n+++++++++++++++++++++++++++\n\n";
+die();
 /*echo "\n\n**************\n\n";
 print_r($storeAPInfrastructure);
 echo "\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n";

@@ -51,9 +51,12 @@ class Scanner
         $list = array();
         $scanned_directory = array_diff(scandir($CaptureFolder), array('..', '.'));
         $scanned_directory = array_values($scanned_directory);
+        if (count($scanned_directory) == 1) {
+            return false;
+        }
         foreach ($scanned_directory as $key => $file) {
 
-            echo $file;
+
             $data = simplexml_load_file($CaptureFolder . "/" . $file);
             // $filePrefix = date("YmdHis");
             // echo shell_exec("move ./{$CaptureFolder}/\{$file}  ./{$CaptureFolder}/\parsed");

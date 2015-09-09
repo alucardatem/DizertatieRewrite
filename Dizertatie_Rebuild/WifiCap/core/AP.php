@@ -302,39 +302,37 @@ class AP
      * @param $Encryption
      * @return array|string
      */
-    public function searchByEncryption($Encryption)
+    public function search($Encryption)
     {
 
         $Query = "SELECT aps_name.Network_Name,
                             aps.AP_Mac,
-                            aps_details.Encryption_Type,
-                            aps_details.Transmssion_Channel,
-                            aps_details.Frequency,
-                            aps_details.lat,
-                            aps_details.lng,
-                            aps_details.Password from aps_details
+                            aps_details.* from aps_details
                   INNER JOIN aps_name as aps_name on aps_name.id_APs=aps_details.id_APs
-                  INNER JOIN aps on aps.id=aps_details.id_APs where aps_details.Encryption_Type like ?";
+                  INNER JOIN aps on aps.id=aps_details.id_APs where aps_details.Encryption_Type like ? OR aps_name.Network_Name like ?";
         if ($stmt = $this->mysqli->prepare($Query)) {
-            $Encryption = '%' . $Encryption . '%';
-            $stmt->bind_param("s", $Encryption);
+
+            echo $Encryption = '%' . $Encryption . '%';
+            $stmt->bind_param("ss", $Encryption, $Encryption);
             if ($stmt->execute()) {
                 $result = $stmt->get_result();
                 $i = 0;
+
                 while ($row[$i] = $result->fetch_assoc()) {
                     ++$i;
                 }
                 $row = array_filter($row);
                 $stmt->close();
+                //return $row[0];
                 return json_encode($row);
 
             } else {
                 $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
-                return array("Status" => "ERROR");
+                return array("Status" => "ERROR1");
             }
         } else {
             $this->error->error($this->logPrefix . ": ERROR EXECUTING STATEMENT: " . $stmt->error . " ON " . __FILE__ . " LINE: " . __LINE__);
-            return array("Status" => "ERROR");
+            return array("Status" => "ERROR2");
         }
 
     }
@@ -365,41 +363,36 @@ class AP
      * @param string $networkName
      * @return array|string
      */
-    public function searchNetwork($networkName = "")
-    {
-        $extraQuery = "";
-        if ($networkName != "") {
-            $extraQuery = " WHERE `aps_name`.Network_Name=?";
-        }
-        $QUERY = "SELECT  `aps_details`.id,
-                          `aps_name`.Network_Name,
-                          `aps_details`.Encryption_Type,
-                          `aps_details`.Transmssion_Channel,
-                          `aps_details`.manuf,
-                          `aps_details`.Carrier,
-                          `aps_details`.Encoding,
-                          `aps_details`.Password,
-                          `aps_details`.HandShake
-                  FROM `aps_details`
-                  INNER JOIN aps_name as aps_name
-                  ON aps_name.id_APs=aps_details.id_APs" . $extraQuery;
-        if ($stmt = $this->mysqli->prepare($QUERY)) {
-            if ($networkName != "") {
-                $stmt->bind_param("s", $networkName);
-            }
-            if ($stmt->execute()) {
-                $result = $stmt->get_result();
-                $i = 0;
-                while ($row[$i] = $result->fetch_assoc()) {
-                    ++$i;
-                }
-                $row = array_filter($row);
-                $stmt->close();
-                return json_encode($row);
-            }
+    /* public function searchNetwork($networkName = "")
+     {
+         $extraQuery = "";
+         if ($networkName != "") {
+             $networkName = '%'.$networkName.'%';
+             $extraQuery = " WHERE `aps_name`.Network_Name like ?";
+         }
+         $QUERY = "SELECT
+                           `aps_name`.Network_Name,aps_details.*
+                   FROM `aps_details`
+                   INNER JOIN aps_name as aps_name
+                   ON aps_name.id_APs=aps_details.id_APs" . $extraQuery;
+         if ($stmt = $this->mysqli->prepare($QUERY)) {
+             if ($networkName != "") {
+                 $stmt->bind_param("s", $networkName);
+             }
+             if ($stmt->execute()) {
+                 $result = $stmt->get_result();
+                 $i = 0;
+                 while ($row[$i] = $result->fetch_assoc()) {
+                     ++$i;
+                 }
+                 $row = array_filter($row);
+                 $stmt->close();
+                 return $row[0];
+                // return json_encode($row);
+             }
 
-        }
-    }
+         }
+     }*/
 
     function getIdAPSByESSIDId($id)
     {

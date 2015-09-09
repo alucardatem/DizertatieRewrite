@@ -178,7 +178,7 @@ class Client
 
         }
         $query = "SELECT  `aps_name`.Network_Name,
-                          sniffed_stations.Station_Mac,
+                          sniffed_stations.*,
                           sniffed_stations.lat,
                           sniffed_stations.lng,
                           sniffed_stations.Station_Power,
