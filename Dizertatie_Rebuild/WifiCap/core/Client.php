@@ -177,33 +177,28 @@ class Client
             $extraQuery = " where sniffed_stations.Station_Mac=?";
 
         }
-        $query = "SELECT  `aps_name`.Network_Name,
-                          sniffed_stations.*,
-                          sniffed_stations.lat,
-                          sniffed_stations.lng,
-                          sniffed_stations.Station_Power,
-                          sniffed_stations.clientManuf,
-                          sniffed_stations.carrier,
-                          sniffed_stations.channel,
-                          sniffed_stations.encoding,
-                          sniffed_stations.DateFirstSeen,
-                          sniffed_stations.DateLastSeen
-	            FROM sniffed_stations
-	            INNER JOIN aps_name as aps_name on
-	                    sniffed_stations.id_Network_Name = aps_name.id_APs" . $extraQuery;
+        $query = "SELECT `aps_name`.Network_Name, sniffed_stations.*
+                      FROM sniffed_stations
+                      INNER JOIN aps_name as aps_name on sniffed_stations.id_Network_Name = aps_name.id" . $extraQuery;
         if ($stmt = $this->mysqli->prepare($query)) {
+
             if ($client != "") {
+                //$client='"'.$client.'"';
                 $stmt->bind_param("s", $client);
             }
 
             if ($stmt->execute()) {
+
                 $result = $stmt->get_result();
                 $i = 0;
+                //print_r($result);
                 while ($row[$i] = $result->fetch_assoc()) {
                     ++$i;
                 }
+                //print_r($row);
                 $row = array_filter($row);
                 $stmt->close();
+
                 return json_encode($row);
             }
         }

@@ -48,7 +48,7 @@ $data = new \WifiCap\Scanner($LoggerError, $LoggerInfo);
 
 $ap = new \WifiCap\AP($dataBaseConnection->_connection, $LoggerError, $LoggerInfo);
 $client = new \WifiCap\Client($ap, $dataBaseConnection->_connection, $LoggerError, $LoggerInfo);
-
+$MapGeneratpr = new \WifiCap\MapGenerator();
 
 $list = $data->parseXML('captures/');
 
@@ -63,39 +63,68 @@ if ($list != false) {
     $addProbes = $client->addProbes($list);
 
 }
+$GenerateNetwokMap = "";
+if (isset($_POST["Submit"])) {
+    switch ($_POST["option"]) {
+        case "client":
+            $search = $client->get($_POST["Search"]);
+            // print_r($_POST);
+            // print_r($search);
+            //die();
+            break;
+        case "network":
+            $search = $ap->search($_POST["Search"]);
+            break;
+        case "encryption":
+            $search = $ap->search($_POST["Search"]);
+            break;
+    }
+    $GenerateNetwokMap = $MapGeneratpr->generateMap($search);
+}
 
-$searchClient = $client->get();
 
+?>
+    <head>
+        <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet'/>
+        <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
 
-$NetworkList = $ap->search("CODE932_GUEST");
-$APList = $ap->search("WPA");
+            #map {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 60%;
+                height: 100%;
+                border: 1px solid #000000;
+            }
+        </style>
+    </head>
 
-//$addPass = $ap->updateNetworkPassword($NetworkList, "guest932code");
+    <body>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 
-echo "\n\n+++++++++++++++++++++++++++SEARCH CLIENT\n\n";
-print_r($searchClient);
-echo "\n\n+++++++++++++++++++++++++++SEARCH NETWORK\n\n";
-print_r($NetworkList);
-echo "\n\n+++++++++++++++++++++++++++SEARCH AP\n\n";
-print_r($APList);
-echo "\n\n+++++++++++++++++++++++++++\n\n";
-die();
-/*echo "\n\n**************\n\n";
-print_r($storeAPInfrastructure);
-echo "\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n";
-print_r($addInfrastructureClient);
-echo "\n\n**************\n\n";
+    <div id="map"></div>
+    <div id="formSearch" style=" float:left; padding-top: 30px;margin-left: 61%;">
+        <form method="post">
+            <select id="option" name="option">
+                <option value="encryption">Encryption</option>
+                <option value="client">Client</option>
+                <option value="network">Network</option>
 
-print_r($storeAPProbes);
-echo "\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n";
-print_r($addProbesClient);
-echo "\n\n**************\n\n";
+            </select>
+            <input type="text" name="Search" id="Search" value="<?php if (isset($_POST["Search"])) {
+                echo $_POST["Search"];
+            } ?>"/>
+            <input type="submit" name="Submit" id="Submit" value="Search">
+        </form>
+    </div>
+    <?= $MapGeneratpr->javascriptKMLMapDisplay($GenerateNetwokMap); ?>
+    </body>
 
-print_r($searchClient);
-echo "\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n";
-print_r($addProbes);
-echo "\n\n**************\n\n";
-print_r($NetworkList);
-echo "\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n";
-print_r($addPass);
-echo "\n\n**************\n\n";*/
+<?php
+

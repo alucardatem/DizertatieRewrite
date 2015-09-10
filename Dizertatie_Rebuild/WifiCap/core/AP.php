@@ -312,7 +312,7 @@ class AP
                   INNER JOIN aps on aps.id=aps_details.id_APs where aps_details.Encryption_Type like ? OR aps_name.Network_Name like ?";
         if ($stmt = $this->mysqli->prepare($Query)) {
 
-            echo $Encryption = '%' . $Encryption . '%';
+            $Encryption = '%' . $Encryption . '%';
             $stmt->bind_param("ss", $Encryption, $Encryption);
             if ($stmt->execute()) {
                 $result = $stmt->get_result();
