@@ -3729,3 +3729,6 @@
 [ERROR][20:14:15]-->[WifiCap\Client][__construct] client has no probes
 [INFO][20:14:15]-->[WifiCap\Client][__construct]SUCCESS INSERT D4:85:64:3B:18:15 | 48 | 25 | 2015-09-09 | 2015-09-09
 [ERROR][20:14:15]-->[WifiCap\Client][__construct] there are no probes set on Client
+[ERROR][18:21:29]-->[WifiCap\Client][__construct] there are no probes set on Client
+[ERROR][18:21:30]-->[WifiCap\Client][__construct] there are no probes set on Client
+[ERROR][18:21:33]-->[WifiCap\Client][__construct] there are no probes set on Client

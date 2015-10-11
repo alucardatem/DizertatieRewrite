@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?> <kml xmlns="http://earth.google.com/kml/2.2"> <Document><name>kml/20151011173203</name>    <Style id="west_campus_style"><IconStyle><Icon><href>https://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href></Icon></IconStyle><BalloonStyle><text>$[video]</text></BalloonStyle></Style></Document></kml>
