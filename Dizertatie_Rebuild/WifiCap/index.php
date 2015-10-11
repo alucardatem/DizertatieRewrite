@@ -64,19 +64,23 @@ if ($list != false) {
 
 }
 $GenerateNetwokMap = "";
+$selected = "";
 if (isset($_POST["Submit"])) {
     switch ($_POST["option"]) {
         case "client":
             $search = $client->get($_POST["Search"]);
+            //    $selected = "selected='selected'";
             // print_r($_POST);
             // print_r($search);
             //die();
             break;
         case "network":
-            $search = $ap->search($_POST["Search"]);
+            $selected = "selected='selected'";
+            //  $search = $ap->search($_POST["Search"]);
             break;
         case "encryption":
             $search = $ap->search($_POST["Search"]);
+            // $selected = "selected='selected'";
             break;
     }
     $GenerateNetwokMap = $MapGeneratpr->generateMap($search);
@@ -88,6 +92,7 @@ if (isset($_POST["Submit"])) {
         <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
         <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet'/>
         <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
         <style>
             body {
                 margin: 0;
@@ -109,12 +114,19 @@ if (isset($_POST["Submit"])) {
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 
     <div id="map"></div>
+    <div id="content-window"></div>
     <div id="formSearch" style=" float:left; padding-top: 30px;margin-left: 61%;">
         <form method="post">
             <select id="option" name="option">
-                <option value="encryption">Encryption</option>
-                <option value="client">Client</option>
-                <option value="network">Network</option>
+                <option value="encryption" <?php if (isset($_POST["option"]) AND $_POST["option"] == "encryption") echo "selected"; ?>>
+                    Encryption
+                </option>
+                <option value="client" <?php if (isset($_POST["option"]) AND $_POST["option"] == "client") echo "selected"; ?>>
+                    Client
+                </option>
+                <option value="network" <?php if (isset($_POST["option"]) AND $_POST["option"] == "network") echo "selected"; ?>>
+                    Network
+                </option>
 
             </select>
             <input type="text" name="Search" id="Search" value="<?php if (isset($_POST["Search"])) {
@@ -124,6 +136,9 @@ if (isset($_POST["Submit"])) {
         </form>
     </div>
     <?= $MapGeneratpr->javascriptKMLMapDisplay($GenerateNetwokMap); ?>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap">
+    </script>
     </body>
 
 <?php
